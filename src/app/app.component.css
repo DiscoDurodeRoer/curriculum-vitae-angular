@@ -1,5 +1,17 @@
-.col-md-3{
+.col-md-3, .col-sm-12{
     padding-left: 0px;
     padding-right: 0px;
+}
+
+@media (min-width:768px){
+    .content-data{
+        padding-left: 25%;
+    }
+}
+
+@media (max-width:768px){
+    .content-data{
+        padding-left: 0;
+    }
 }
 
