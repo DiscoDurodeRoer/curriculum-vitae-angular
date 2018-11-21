@@ -1,0 +1,125 @@
+{
+    "datos_personales": [
+        {
+            "column_display": "Nombre",
+            "column_value": "Fernando"
+        },
+        {
+            "column_display": "Apellidos",
+            "column_value": "Ureña Gómez"
+        },
+        {
+            "column_display": "DNI",
+            "column_value": "70588387F"
+        },
+        {
+            "column_display": "Fecha nacimiento",
+            "column_value": "05/02/1990"
+        },
+        {
+            "column_display": "Email",
+            "column_value": "fernando.ureña.gomez@gmail.com"
+        },
+        {
+            "column_display": "Estado civil",
+            "column_value": "Soltero"
+        },
+        {
+            "column_display": "Nacionalidad",
+            "column_value": "Española"
+        },
+        {
+            "column_display": "Carnet conducir",
+            "column_value": "Tipo B"
+        },
+        {
+            "column_display": "Vehiculo propio",
+            "column_value": "Si"
+        },
+        {
+            "column_display": "Disponibilidad para viajar",
+            "column_value": "No"
+        }
+    ],
+    "estudios": [
+        {
+            "rango": "2010-2012",
+            "lugar": "IES Maestre de Calatrava, Ciudad Real",
+            "titulo": "Técnico en Microsistemas Informáticos y Redes",
+            "nota": "9.31"
+        },
+        {
+            "rango": "2012-2014",
+            "lugar": "IES Maestre de Calatrava, Ciudad Real",
+            "titulo": "Técnico en desarrollo de aplicaciones multiplataforma",
+            "nota": "9.64"
+        },
+        {
+            "rango": "2016-2017",
+            "lugar": "IES Maestre de Calatrava, Ciudad Real",
+            "titulo": "Técnico en desarrollo de aplicaciones web (e-learning)",
+            "nota": "9"
+        }
+    ],
+    "cursos": [
+        {
+            "anio": "2011",
+            "nombre": "Cisco Information Technology Essentials: Hardware and Software",
+            "lugar": "IES Maestre de Calatrava",
+            "horas": "20",
+            "tipo": "Presencial"
+        },
+        {
+            "anio": "2011",
+            "nombre": "Diseño de páginas web",
+            "lugar": "Universidad Deusto",
+            "horas": "250",
+            "tipo": "A distancia"
+        },
+        {
+            "anio": "2012",
+            "nombre": "Community manager",
+            "lugar": "Universidad Deusto",
+            "horas": "300",
+            "tipo": "A distancia"
+        }
+    ],
+    "experiencias": [
+        {
+            "rango": "Marzo 2012 - Junio 2012",
+            "compania": "SEC",
+            "posicion": "Administrador de sistemas",
+            "descripcion": "Encargado de las redes y del mantenimiento y funcionamiento de los equipos de la empresa"
+        },
+        {
+            "rango": "Marzo 2014 - Junio 2014",
+            "compania": "Goodwebsite",
+            "posicion": "Programador en la empresa",
+            "descripcion": "Realizaba páginas web y aplicaciones a medida para clientes"
+        },
+        {
+            "rango": "Abril 2015 - Diciempre 2017",
+            "compania": "Autonomo",
+            "posicion": "Freelance",
+            "descripcion": "Trabajo como freelance haciendo aplicaciones, creando y reparando webs en Fiverr"
+        },
+        {
+            "rango": "Abril 2015 - Diciempre 2017",
+            "compania": "Autonomo",
+            "posicion": "Profesor particular",
+            "descripcion": "Doy clases particulares de programación en classgap"
+        },
+        {
+            "rango": "Julio 2016 – Septiembre 2016",
+            "compania": "Everis",
+            "posicion": "Soporte técnico",
+            "descripcion": "Contratado para suplir vacaciones, realizaba tareas de despliegue y de gestión de servidores"
+        },
+        {
+            "rango": "Diciempre 2017 - Actualidad",
+            "compania": "Indra",
+            "posicion": "Programador",
+            "descripcion": "Trabajando realizando aplicaciones del area de Sanidad"
+        }
+    ]
+}

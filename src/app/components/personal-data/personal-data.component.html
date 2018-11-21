@@ -1,3 +1,18 @@
 <div id="personal-data">
-    datos personales
+
+    <h1>Datos personales</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Campo</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of personal_data">
+                <td>{{row.column_display}}</td>
+                <td>{{row.column_value}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

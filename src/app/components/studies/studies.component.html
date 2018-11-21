@@ -1,3 +1,47 @@
 <div id="studies">
-  estudios
+
+  <h1>Estudios</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Lugar</th>
+        <th>Titulo</th>
+        <th>Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of studies">
+            <td>{{row.rango}}</td>
+            <td>{{row.lugar}}</td>
+            <td>{{row.titulo}}</td>
+            <td>{{row.nota}}</td>
+        </tr>
+    </tbody>
+  </table>
+
+  <br/>
+
+  <h1>Cursos</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Año</th>
+        <th>Curso</th>
+        <th>Lugar</th>
+        <th>Horas</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of courses">
+            <td>{{row.anio}}</td>
+            <td>{{row.nombre}}</td>
+            <td>{{row.lugar}}</td>
+            <td>{{row.horas}}</td>
+            <td>{{row.tipo}}</td>
+        </tr>
+    </tbody>
+  </table>
+
 </div>

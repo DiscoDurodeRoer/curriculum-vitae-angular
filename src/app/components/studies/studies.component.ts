@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosService } from '../../services/datos.service';
 
 @Component({
   selector: 'app-studies',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudiesComponent implements OnInit {
 
-  constructor() { }
+  private studies:any[];
+  private courses:any[];
+
+
+  constructor(private dataService: DatosService) { }
 
   ngOnInit() {
+
+    this.dataService.getData().subscribe(data => {
+      this.studies = data.json().estudios;
+      this.courses = data.json().cursos;
+    }
+    );
+
   }
 
 }
