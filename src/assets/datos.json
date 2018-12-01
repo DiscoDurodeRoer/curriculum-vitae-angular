@@ -121,5 +121,63 @@
             "posicion": "Programador",
             "descripcion": "Trabajando realizando aplicaciones del area de Sanidad"
         }
+    ],
+    "habilidades": [
+        {
+            "nombre": "Java SE",
+            "valor": "90"
+        },
+        {
+            "nombre": "VB .Net",
+            "valor": "80"
+        },
+        {
+            "nombre": "Angular",
+            "valor": "90"
+        },
+        {
+            "nombre": "Python",
+            "valor": "60"
+        },
+        {
+            "nombre": "PHP",
+            "valor": "50"
+        },
+        {
+            "nombre": "Android",
+            "valor": "30"
+        },
+        {
+            "nombre": "Wordpress",
+            "valor": "90"
+        },
+        {
+            "nombre": "CSS",
+            "valor": "80"
+        },
+        {
+            "nombre": "C#",
+            "valor": "40"
+        },
+        {
+            "nombre": "Prestashop",
+            "valor": "70"
+        },
+        {
+            "nombre": "MySQL",
+            "valor": "70"
+        },
+        {
+            "nombre": "Oracle",
+            "valor": "60"
+        },
+        {
+            "nombre": "Javascript",
+            "valor": "80"
+        },
+        {
+            "nombre": "Magento",
+            "valor": "30"
+        }
     ]
 }
