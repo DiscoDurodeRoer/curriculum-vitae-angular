@@ -20,7 +20,6 @@ export class SkillsComponent implements OnInit {
       for(let skill of this.skills){
         skill.class_color = this.randomColor();
       }
-      console.log(this.skills);
     }
     );
 

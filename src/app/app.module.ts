@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -13,6 +14,7 @@ import { StudiesComponent } from './components/studies/studies.component';
 import { PersonalDataComponent } from './components/personal-data/personal-data.component';
 
 import { DatosService } from './services/datos.service'
+import { EmailService } from './services/email.service'
 
 import { APP_ROUTING } from './app.routes';
 
@@ -31,10 +33,12 @@ import { APP_ROUTING } from './app.routes';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     APP_ROUTING
   ],
   providers: [
-    DatosService
+    DatosService,
+    EmailService
   ],
   bootstrap: [AppComponent]
 })

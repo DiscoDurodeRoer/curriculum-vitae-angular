@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailService } from '../../services/email.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  private dataForm = {
+    "name": "",
+    "email": "",
+    "mensaje": ""
   }
+
+  private enviado = false;
+  private correcto = true;
+
+  constructor(private emailService: EmailService) { }
+
+  ngOnInit() { }
+
+  sendEmail(form: NgForm) {
+
+    console.log(form);
+    this.emailService.sendEmail(this.dataForm).subscribe(res => {
+
+      if (res.text() === '1') {
+        this.correcto = true;
+      } else {
+        this.correcto = false;
+      }
+      this.enviado = true;
+
+    }, error => {
+      this.correcto = false;
+      this.enviado = true;
+      console.log('Err: ' + error);
+    });
+  }
+
+
 
 }
