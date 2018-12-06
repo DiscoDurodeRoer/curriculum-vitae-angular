@@ -17,6 +17,8 @@ import { DatosService } from './services/datos.service'
 import { EmailService } from './services/email.service'
 
 import { APP_ROUTING } from './app.routes';
+import { WorksComponent } from './components/works/works.component';
+import { WorkService } from './services/work.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { APP_ROUTING } from './app.routes';
     SkillsComponent,
     ExperienceComponent,
     StudiesComponent,
-    PersonalDataComponent
+    PersonalDataComponent,
+    WorksComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { APP_ROUTING } from './app.routes';
   ],
   providers: [
     DatosService,
-    EmailService
+    EmailService,
+    WorkService
   ],
   bootstrap: [AppComponent]
 })
