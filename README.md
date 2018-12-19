@@ -14,6 +14,12 @@ Necesitarás instalar estos programas:
 
 - NodeJS (https://nodejs.org/es/)
 
+También debes instalar angular cli, lo puedes hacer asi.
+
+```json
+npm install -g @angular/cli
+```
+
 Abre una terminal, posicionate sobre el directorio y haz un npm install.
 
 Una vez lo tengas, puedes hacer un npm start o ng serve para iniciar el proyecto.
