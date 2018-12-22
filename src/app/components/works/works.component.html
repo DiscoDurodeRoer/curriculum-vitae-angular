@@ -1,3 +1,37 @@
-<p>
-  works works!
-</p>
+<div id="works"*ngIf="load">
+
+  <div *ngIf="posts.length == 0">
+    No hay trabajos para mostrar
+  </div>
+
+  <div class="row flex-container" *ngIf="posts.length > 0">
+
+    <div class="col-md-4" *ngFor="let post of posts | paginate: {itemsPerPage: 3, currentPage: page}">
+
+      <div>
+        <img class="img-responsive" [src]="post.thumbnail" />
+      </div>
+      <div>
+        <a class="title" [href]="post.url" target="_blank">{{post.title}}</a>
+
+        <p [innerHTML]="post.excerpt"></p>
+
+
+      </div> 
+
+
+    </div>
+
+  </div>
+
+  <div class="pagination-footer">
+    <pagination-controls 
+      nextLabel="Siguiente"
+      previousLabel="Anterior"
+      (pageChange)="page = $event">
+
+    </pagination-controls>
+  </div>
+
+
+</div>

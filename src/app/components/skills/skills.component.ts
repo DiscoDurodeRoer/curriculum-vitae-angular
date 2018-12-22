@@ -15,7 +15,7 @@ export class SkillsComponent implements OnInit {
   ngOnInit() {
 
     this.dataService.getData().subscribe(data => {
-      this.skills = data.json().habilidades;
+      this.skills = data["habilidades"];
       
       for(let skill of this.skills){
         skill.class_color = this.randomColor();
@@ -32,19 +32,19 @@ export class SkillsComponent implements OnInit {
     switch (rand) {
       case 1:
         class_color.color = "red";
-        class_color.class_progress = "progress-bar-danger";
+        class_color.class_progress = "bg-danger";
         break;
       case 2:
         class_color.color = "blue";
-        class_color.class_progress = "progress-bar-info";
+        class_color.class_progress = "bg-info";
         break;
       case 3:
         class_color.color = "yellow";
-        class_color.class_progress = "progress-bar-warning";
+        class_color.class_progress = "bg-warning";
         break;
       case 4:
         class_color.color = "green";
-        class_color.class_progress = "progress-bar-success";
+        class_color.class_progress = "bg-success";
         break;
     }
     return class_color;

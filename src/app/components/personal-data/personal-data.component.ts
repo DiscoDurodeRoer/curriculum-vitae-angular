@@ -15,7 +15,7 @@ export class PersonalDataComponent implements OnInit {
   ngOnInit() {
 
     this.dataService.getData().subscribe(data => {
-      this.personal_data = data.json().datos_personales;
+      this.personal_data = data["datos_personales"];
     }
     );
 

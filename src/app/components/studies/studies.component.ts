@@ -17,8 +17,8 @@ export class StudiesComponent implements OnInit {
   ngOnInit() {
 
     this.dataService.getData().subscribe(data => {
-      this.studies = data.json().estudios;
-      this.courses = data.json().cursos;
+      this.studies = data["estudios"];
+      this.courses = data["cursos"];
     }
     );
 

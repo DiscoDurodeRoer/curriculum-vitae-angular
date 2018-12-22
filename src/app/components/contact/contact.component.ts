@@ -24,10 +24,9 @@ export class ContactComponent implements OnInit {
 
   sendEmail(form: NgForm) {
 
-    console.log(form);
     this.emailService.sendEmail(this.dataForm).subscribe(res => {
 
-      if (res.text() === '1') {
+      if (res === 1) {
         this.correcto = true;
       } else {
         this.correcto = false;

@@ -1,79 +1,57 @@
 <div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="well well-sm">
 
-                <div *ngIf="enviado && correcto" class="alert alert-success" role="alert">
-                    ¡Mensaje enviado correctamente!
-                </div>
+    <div class="col-12 bg-light">
 
-                <div *ngIf="enviado && !correcto" class="alert alert-danger" role="alert">
-                    Ha habido un error, pruebalo mas tarde.
-                </div>
+        <div *ngIf="enviado && correcto" class="alert alert-success" role="alert">
+            ¡Mensaje enviado correctamente!
+        </div>
 
-                <form #form="ngForm" class="form-horizontal" method="post" (ngSubmit)="sendEmail(form)">
-                    <fieldset>
+        <div *ngIf="enviado && !correcto" class="alert alert-danger" role="alert">
+            Ha habido un error, pruebalo mas tarde.
+        </div>
 
-                        <legend class="text-center">
-                            <h1>Contacto</h1>
-                        </legend>
-                        <div class="controls">
-                            <label class="control-label" for="name">Nombre (*)</label>
-                            <input  id="name" 
-                                    name="name" 
-                                    type="text" 
-                                    placeholder="Tu nombre" 
-                                    class="form-control" 
-                                    [(ngModel)]="dataForm.name"
-                                    #name="ngModel"
-                                    required>
+        <form #form="ngForm" class="form-horizontal" method="post" (ngSubmit)="sendEmail(form)">
+            <fieldset>
 
-                            <div class="alert alert-danger message-error" role="alert" *ngIf="name.errors?.required && name.dirty">
-                                El nombre es obligatorio
-                            </div>        
+                <legend class="text-center">
+                    <h1>Contacto</h1>
+                </legend>
+                <div class="controls">
+                    <label class="control-label" for="name">Nombre (*)</label>
+                    <input id="name" name="name" type="text" placeholder="Tu nombre" class="form-control" [(ngModel)]="dataForm.name"
+                        #name="ngModel" required>
 
-                            <label class="control-label" for="email">Tu E-mail (*)</label>
-                            <input  id="email" 
-                                    name="email" 
-                                    type="text" 
-                                    placeholder="Tu email" 
-                                    class="form-control" 
-                                    [(ngModel)]="dataForm.email"
-                                    #email="ngModel"
-                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                                    required>
+                    <div class="alert alert-danger message-error" role="alert" *ngIf="name.errors?.required && name.dirty">
+                        El nombre es obligatorio
+                    </div>
 
-                            <div class="alert alert-danger message-error" role="alert" *ngIf="email.errors?.required && email.dirty">
-                                El email es obligatorio
-                            </div>        
+                    <label class="control-label" for="email">Tu E-mail (*)</label>
+                    <input id="email" name="email" type="text" placeholder="Tu email" class="form-control" [(ngModel)]="dataForm.email"
+                        #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
 
-                            <div class="alert alert-danger message-error" role="alert" *ngIf="email.errors?.pattern && email.dirty">
-                                El email no tiene el formato correcto
-                            </div>        
+                    <div class="alert alert-danger message-error" role="alert" *ngIf="email.errors?.required && email.dirty">
+                        El email es obligatorio
+                    </div>
+
+                    <div class="alert alert-danger message-error" role="alert" *ngIf="email.errors?.pattern && email.dirty">
+                        El email no tiene el formato correcto
+                    </div>
 
 
-                            <label class=" control-label" for="message">Tu mensaje (*)</label>
-                            <textarea   id="message"
-                                        class="form-control" 
-                                        name="message" 
-                                        placeholder="Escribe tu mensaje..." 
-                                        rows="10" 
-                                        [(ngModel)]="dataForm.mensaje"
-                                        #message="ngModel"
-                                        required>
+                    <label class=" control-label" for="message">Tu mensaje (*)</label>
+                    <textarea id="message" class="form-control" name="message" placeholder="Escribe tu mensaje..." rows="10"
+                        [(ngModel)]="dataForm.mensaje" #message="ngModel" required>
                             </textarea>
 
-                            <div class="alert alert-danger message-error" role="alert" *ngIf="message.errors?.required && message.dirty">
-                                El mensaje es obligatorio
-                            </div>        
+                    <div class="alert alert-danger message-error" role="alert" *ngIf="message.errors?.required && message.dirty">
+                        El mensaje es obligatorio
+                    </div>
 
-                            <button type="submit" [disabled]="form.invalid" class="col-md-12 btn btn-primary btn-lg">Enviar</button>
+                    <button type="submit" [disabled]="form.invalid" class="col-md-12 btn btn-primary btn-lg">Enviar</button>
 
-                        </div>
+                </div>
 
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+            </fieldset>
+        </form>
     </div>
 </div>

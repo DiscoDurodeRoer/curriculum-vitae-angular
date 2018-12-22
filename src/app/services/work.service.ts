@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptions,Headers  } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class WorkService {
@@ -8,7 +7,7 @@ export class WorkService {
     private _webUrl: string;
     private _categoryId: number
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
 
     }
 
@@ -23,17 +22,17 @@ export class WorkService {
 
     getPosts() {
 
-        let headers = new Headers();
+        let headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json; charset=UTF-8');
 
         const url = this._webUrl + "/?json=get_category_posts&category_id=" + this._categoryId;
-        return this.http.get(url, {headers: headers}).map(data => this.getData(data));
+        return this.http.get(url, {headers: headers});
 
     }
 
-    getData(data: any){
+    /*getData(data: any){
         const dataProcess = data.json();
         return dataProcess ? dataProcess.posts : [];
-    }
+    }*/
 
 }

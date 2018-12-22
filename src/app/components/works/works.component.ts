@@ -12,19 +12,21 @@ export class WorksComponent implements OnInit {
   private posts = [];
   private load = false;
 
+  page: number = 1;
+
   constructor(private dataService: DatosService, private works: WorkService) { }
 
   ngOnInit() {
 
     this.dataService.getData().subscribe(data => {
-      const webUrl = data.json().webUrl;
-      const categoryId = data.json().categoryId;
+      const webUrl = data["webUrl"];
+      const categoryId = data["categoryId"];
 
       this.works.webUrl = webUrl;
       this.works.categoryId = categoryId;
 
       this.works.getPosts().subscribe(postData =>{
-        this.posts = postData;
+        this.posts = postData["posts"];
         this.load = true;
         console.log(this.posts);
       })

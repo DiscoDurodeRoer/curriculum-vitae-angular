@@ -1,7 +1,5 @@
 
-.circle-photo{
-    border-radius: 50%;
-}
+
 
 #sidebar{
     background: #000;
@@ -10,25 +8,12 @@
 }
 
 
-@media (min-width:768px){
-    #sidebar{
-        position: fixed;
-    }
-}
-
-@media (max-width:768px){
-    #sidebar{
-        position: none;
-    }
-}
-
-
-
-
 #sidebar h1, #sidebar h2{
     color: #fff;
     text-align: center;
 }
+
+/* Botones */
 
 .btn-facebook {
     color: #fff;

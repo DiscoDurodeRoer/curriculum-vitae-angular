@@ -1,17 +1,10 @@
-.col-md-3, .col-sm-12{
-    padding-left: 0px;
-    padding-right: 0px;
+
+.content{
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
-@media (min-width:768px){
-    .content-data{
-        padding-left: 25%;
-    }
+.full-height{
+    height: 100vh;
 }
-
-@media (max-width:768px){
-    .content-data{
-        padding-left: 0;
-    }
-}
-

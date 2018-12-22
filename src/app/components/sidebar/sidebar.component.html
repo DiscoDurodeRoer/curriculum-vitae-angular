@@ -1,13 +1,19 @@
+<div id="sidebar">
+  <div class="row">
+    <div class="col-12 text-center">
+      <img class="img-fluid rounded-circle" src="../../assets/img/fernando.jpg">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h1>Curriculum vitae</h1>
+      <h2>Fernando Ureña Gómez</h2>
+    </div>
+    <div class="col-12">
+      <a *ngFor="let sn of social_networks" class="btn btn-block btn-social btn-{{sn.icon}}" href="{{sn.link}}" target="_blank">
+        <span class="fa fa-{{sn.icon}}"></span> {{sn.name}}
+      </a>
+    </div>
 
-<div id="sidebar" class="col-md-3">
-  <img class="img-responsive center-block circle-photo" src="../../assets/img/fernando.jpg" >
-
-  <h1>Curriculum vitae</h1>
-  <h2>Fernando Ureña Gómez</h2>
-
-  <a *ngFor="let sn of social_networks" class="btn btn-block btn-social btn-{{sn.icon}}" href="{{sn.link}}"  target="_blank">
-    <span class="fa fa-{{sn.icon}}"></span> {{sn.name}}
-  </a>
-
+  </div>
 </div>
-
