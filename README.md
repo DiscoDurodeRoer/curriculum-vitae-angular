@@ -50,25 +50,25 @@ Configuracion de datos
 En el fichero datos.json contiene las siguientes opciones:
 
 datos_personales: se utiliza para mostrar tus datos personales contiene el nombre de la columna y su valor, solo debes poner los datos que tu necesites, tiene la siguiente estructura:
-'''json
+```json
 {
       "column_display": "Nombre",
       "column_value": "Fernando"
 }
-'''
+```
 estudios: contiene los estudios realizados, tiene la siguiente estructura:
 
-'''json
+```json
 {
     "rango": "2010-2012",
     "lugar": "IES Maestre de Calatrava, Ciudad Real",
     "titulo": "Técnico en Microsistemas Informáticos y Redes",
     "nota": "9.31"
 }
-'''
+```
 cursos: contiene los cursos realizados, tiene la siguiente estructura:
 
-'''json
+```json
 {
     "anio": "2011",
     "nombre": "Cisco Information Technology Essentials: Hardware and Software",
@@ -76,24 +76,24 @@ cursos: contiene los cursos realizados, tiene la siguiente estructura:
     "horas": "20",
     "tipo": "Presencial"
 }
-'''
+```
 experiencias: contiene toda la experiencia laboral, tiene la siguiente estructura:
 
-'''json
+```json
 {
     "rango": "Marzo 2012 - Junio 2012",
     "compania": "SEC",
     "posicion": "Administrador de sistemas",
     "descripcion": "Encargado de las redes y del mantenimiento y funcionamiento de los equipos de la empresa"
 }
-'''
+```
 habilidades: contiene en que grado porcentual tienes experiencia sobre una materia o conocimiento en concreto, tiene la siguiente estructura:
-'''json
+```json
 {
     "nombre": "Java SE",
     "valor": "90"
 }
-'''
+```
 IMPORTANTE: el valor debe estar entre 0 y 100
 
 webUrl: indica donde se localiza la web o host que contiene el API REST. Se usa para la parte de trabajos. Mi personal recomendación es un wordpress con este plugin https://es.wordpress.org/plugins/json-api/
