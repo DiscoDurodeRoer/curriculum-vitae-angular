@@ -4,7 +4,7 @@ La finalidad de este proyecto, es proporcionar una aplicación web realizada en 
 
 IMPORTANTE: no se ha terminado aún. Se avisará cuando este estable.
 
-Actualmente, se encuentra en la versión 5 de Angular.
+Actualmente, se encuentra en la versión 7 de Angular.
 
 ## Instalación en local
 
