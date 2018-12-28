@@ -75,3 +75,14 @@
     background-color: #534a4a;
     border-color: rgba(0,0,0,0.2);
 }
+
+.btn-github{
+    color:#fff;
+    background-color:#444;
+    border-color:rgba(0,0,0,0.2)
+}
+.btn-github:hover{
+    color:#fff;
+    background-color:#303030;
+    border-color:rgba(0,0,0,0.2)
+}

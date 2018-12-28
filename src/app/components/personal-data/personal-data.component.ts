@@ -8,7 +8,8 @@ import { DatosService } from '../../services/datos.service';
 })
 export class PersonalDataComponent implements OnInit {
 
-  private personal_data: any[];
+  public personal_data: any[];
+  public load = false;
 
   constructor(private dataService: DatosService) { }
 
@@ -16,6 +17,7 @@ export class PersonalDataComponent implements OnInit {
 
     this.dataService.getData().subscribe(data => {
       this.personal_data = data["datos_personales"];
+      this.load = true;
     }
     );
 

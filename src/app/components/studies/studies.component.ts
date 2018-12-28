@@ -8,9 +8,9 @@ import { DatosService } from '../../services/datos.service';
 })
 export class StudiesComponent implements OnInit {
 
-  private studies:any[];
-  private courses:any[];
-
+  public studies:any[];
+  public courses:any[];
+  public load = false;
 
   constructor(private dataService: DatosService) { }
 
@@ -19,8 +19,11 @@ export class StudiesComponent implements OnInit {
     this.dataService.getData().subscribe(data => {
       this.studies = data["estudios"];
       this.courses = data["cursos"];
-    }
-    );
+      this.load =true;
+    }, error => {
+      console.log(error);
+      this.load =true;
+    });
 
   }
 

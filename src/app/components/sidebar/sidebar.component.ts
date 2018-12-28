@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosService } from '../../services/datos.service';
 
 @Component({
   selector: 'sidebar',
@@ -7,38 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  private social_networks = [
-    {
-      name: 'Facebook',
-      icon: 'facebook',
-      link: 'https://www.facebook.com/pages/Disco-Duro-de-Roer/516155851734486?ref=hl'
-    },
-    {
-        name: 'Linkedin',
-        icon: 'linkedin',
-        link: 'https://www.linkedin.com/in/fernando-ure%C3%B1a-gomez-07b04049/'
-    },
-    {
-        name: 'Youtube',
-        icon: 'youtube',
-        link: 'https://www.youtube.com/user/DiscoDurodeRoer'
-    },
-    {
-        name: 'Twitter',
-        icon: 'twitter',
-        link: 'https://twitter.com/DiscoDurodeRoer'
-    },
-    {
-        name: 'Website',
-        icon: 'globe',
-        link: 'https://www.discoduroderoer.es'
-    }
-  ];
+  public social_networks = [];
+  public img_profile: string;
+  public name: string;
 
-
-  constructor() { }
+  constructor(private datosService:DatosService) { }
 
   ngOnInit() {
+    this.datosService.getData().subscribe(data =>{
+      this.social_networks = data["social_networks"];
+      this.img_profile = data["img_profile"];
+      this.name = data["name"];
+    });
   }
 
 }

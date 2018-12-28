@@ -1,18 +1,26 @@
-<div id="personal-data" class="col-12">
+<div id="personal-data" class="col-12 h-100">
 
-    <h1>Datos personales</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Campo</th>
-                <th>Valor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let row of personal_data">
-                <td>{{row.column_display}}</td>
-                <td>{{row.column_value}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <ng-container *ngIf="load">
+        <h1>Datos personales</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of personal_data">
+                    <td>{{row.column_display}}</td>
+                    <td>{{row.column_value}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+
+    <div class="h-100" *ngIf="!load">
+        <div class="spinner">
+            <img src="./assets/img/spinner.gif" />
+        </div>
+    </div>
 </div>

@@ -8,7 +8,8 @@ import { DatosService } from '../../services/datos.service';
 })
 export class SkillsComponent implements OnInit {
 
-  private skills: any[];
+  public skills: any[];
+  public load = false;
 
   constructor(private dataService: DatosService) { }
 
@@ -16,12 +17,17 @@ export class SkillsComponent implements OnInit {
 
     this.dataService.getData().subscribe(data => {
       this.skills = data["habilidades"];
-      
-      for(let skill of this.skills){
+
+      for (let skill of this.skills) {
         skill.class_color = this.randomColor();
       }
-    }
-    );
+
+        this.load = true;
+
+    }, error => {
+      console.log(error);
+      this.load = true;
+    });
 
   }
 

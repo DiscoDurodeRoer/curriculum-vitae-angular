@@ -9,10 +9,12 @@ import { WorkService } from '../../services/work.service';
 })
 export class WorksComponent implements OnInit {
 
-  private posts = [];
-  private load = false;
+  public posts = [];
+  public load = false;
 
-  page: number = 1;
+  public itemsPerPage;
+
+  public page: number = 1;
 
   constructor(private dataService: DatosService, private works: WorkService) { }
 
@@ -21,16 +23,22 @@ export class WorksComponent implements OnInit {
     this.dataService.getData().subscribe(data => {
       const webUrl = data["webUrl"];
       const categoryId = data["categoryId"];
+      this.itemsPerPage = data["itemsPerPageWorks"];
 
       this.works.webUrl = webUrl;
       this.works.categoryId = categoryId;
 
-      this.works.getPosts().subscribe(postData =>{
+      this.works.getPosts().subscribe(postData => {
         this.posts = postData["posts"];
         this.load = true;
-        console.log(this.posts);
-      })
+      }, error => {
+        console.log(error);
+        this.load = true
+      });
 
+    }, error => {
+      console.log(error);
+      this.load = true
     });
 
   }

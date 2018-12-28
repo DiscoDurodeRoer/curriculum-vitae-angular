@@ -8,7 +8,8 @@ import { DatosService } from '../../services/datos.service';
 })
 export class ExperienceComponent implements OnInit {
 
-  private experiences: any[];
+  public experiences: any[];
+  public load = false;
 
   constructor(private dataService: DatosService) { }
 
@@ -16,8 +17,8 @@ export class ExperienceComponent implements OnInit {
 
     this.dataService.getData().subscribe(data => {
       this.experiences = data["experiencias"];
-    }
-    );
+      this.load = true;
+    });
 
   }
 

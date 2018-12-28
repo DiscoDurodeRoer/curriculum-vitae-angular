@@ -60,9 +60,9 @@ h1{
 }
 .progress.red .progress-bar:after{ border-left-color: #dc3545; }
 .progress .progress-value:after{ border-left: 13px solid #000; }
-.progress.blue .progress-bar:after{ border-left-color: #5bc0de; }
-.progress.yellow .progress-bar:after{ border-left-color: #f0ad4e; }
-.progress.green .progress-bar:after{ border-left-color: #5cb85c; }
+.progress.blue .progress-bar:after{ border-left-color: #17a2b8; }
+.progress.yellow .progress-bar:after{ border-left-color: #ffc107; }
+.progress.green .progress-bar:after{ border-left-color: #28a745; }
 @-webkit-keyframes animate-positive{
     0%{ width: 0; }
 }

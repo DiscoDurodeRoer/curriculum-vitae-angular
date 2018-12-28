@@ -9,20 +9,23 @@ import { NgForm } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  private dataForm = {
+  public dataForm = {
     "name": "",
     "email": "",
     "mensaje": ""
   }
 
-  private enviado = false;
-  private correcto = true;
+  public enviado = false;
+  public correcto = true;
+  public load = true;
 
   constructor(private emailService: EmailService) { }
 
   ngOnInit() { }
 
   sendEmail(form: NgForm) {
+
+    this.load = false;
 
     this.emailService.sendEmail(this.dataForm).subscribe(res => {
 
@@ -32,10 +35,12 @@ export class ContactComponent implements OnInit {
         this.correcto = false;
       }
       this.enviado = true;
+      this.load = true;
 
     }, error => {
       this.correcto = false;
       this.enviado = true;
+      this.load = true;
       console.log('Err: ' + error);
     });
   }

@@ -1,13 +1,13 @@
 <div id="sidebar">
   <div class="row">
     <div class="col-12 text-center">
-      <img class="img-fluid rounded-circle" src="../../assets/img/fernando.jpg">
+      <img class="img-fluid rounded-circle" [src]="img_profile">
     </div>
   </div>
   <div class="row">
     <div class="col-12">
       <h1>Curriculum vitae</h1>
-      <h2>Fernando Ureña Gómez</h2>
+      <h2>{{name}}</h2>
     </div>
     <div class="col-12">
       <a *ngFor="let sn of social_networks" class="btn btn-block btn-social btn-{{sn.icon}}" href="{{sn.link}}" target="_blank">
