@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailService } from '../../services/email.service';
 import { NgForm } from '@angular/forms';
+import { DatosService } from '../../services/datos.service';
 
 @Component({
   selector: 'app-contact',
@@ -17,11 +18,20 @@ export class ContactComponent implements OnInit {
 
   public enviado = false;
   public correcto = true;
-  public load = true;
+  public load = false;
 
-  constructor(private emailService: EmailService) { }
+  constructor(private emailService: EmailService,
+    private datosService: DatosService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.datosService.getData().subscribe(data => {
+      this.emailService.url = data["urlPHPEmail"];
+      this.load = true;
+    }, error => {
+      console.log("Error: " + error);
+      this.load = true;
+    });
+  }
 
   sendEmail(form: NgForm) {
 
