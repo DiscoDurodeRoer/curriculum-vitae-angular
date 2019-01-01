@@ -69,3 +69,18 @@ h1{
 @keyframes animate-positive{
     0%{ width: 0; }
 }
+
+@media (max-width: 576px){
+    .progress-bar .progress-value {
+        width: 80px;
+        font-size: 10px;
+    }
+
+}
+
+@media (min-width: 577px) and (max-width: 768px){
+    .progress-bar[_ngcontent-c3] .progress-value[_ngcontent-c3] {
+        width: 115px;
+        font-size: 13px;
+    }
+}

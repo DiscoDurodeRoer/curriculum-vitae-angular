@@ -3,8 +3,27 @@
     padding-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
+
+
 }
 
-.full-height{
-    height: 100vh;
+@media (max-width: 767px){
+
+    .content{
+        overflow: hidden;
+    }
+
+}
+
+@media (min-width: 768px){
+
+    .content{
+        height: 94%;
+        overflow: auto;
+    }
+
+    .panel-left{
+        overflow: hidden;
+    }
+
 }
