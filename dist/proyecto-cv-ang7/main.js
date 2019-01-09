@@ -975,7 +975,7 @@ var SkillsComponent = /** @class */ (function () {
             _this.skills = data["habilidades"];
             for (var _i = 0, _a = _this.skills; _i < _a.length; _i++) {
                 var skill = _a[_i];
-                skill.class_color = _this.randomColor();
+                skill.class_color = _this.chooseColor(skill);
             }
             _this.load = true;
         }, function (error) {
@@ -983,26 +983,23 @@ var SkillsComponent = /** @class */ (function () {
             _this.load = true;
         });
     };
-    SkillsComponent.prototype.randomColor = function () {
-        var rand = Math.floor((Math.random() * 4) + 1);
+    SkillsComponent.prototype.chooseColor = function (skill) {
         var class_color = { "color": '', "class_progress": '' };
-        switch (rand) {
-            case 1:
-                class_color.color = "red";
-                class_color.class_progress = "bg-danger";
-                break;
-            case 2:
-                class_color.color = "blue";
-                class_color.class_progress = "bg-info";
-                break;
-            case 3:
-                class_color.color = "yellow";
-                class_color.class_progress = "bg-warning";
-                break;
-            case 4:
-                class_color.color = "green";
-                class_color.class_progress = "bg-success";
-                break;
+        if (skill.valor >= 80 && skill.valor <= 100) {
+            class_color.color = "green";
+            class_color.class_progress = "bg-success";
+        }
+        else if (skill.valor >= 60 && skill.valor < 80) {
+            class_color.color = "blue";
+            class_color.class_progress = "bg-info";
+        }
+        else if (skill.valor >= 40 && skill.valor < 60) {
+            class_color.color = "yellow";
+            class_color.class_progress = "bg-warning";
+        }
+        else {
+            class_color.color = "red";
+            class_color.class_progress = "bg-danger";
         }
         return class_color;
     };
@@ -1296,7 +1293,7 @@ var EmailService = /** @class */ (function () {
     });
     EmailService.prototype.sendEmail = function (data) {
         var options = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]()
-            .set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            .set('Content-Type', 'Content-Type:text/plain; charset=UTF-8');
         return this.http.post(this._url, data, { headers: options });
     };
     return EmailService;

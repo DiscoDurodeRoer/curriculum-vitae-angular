@@ -86,3 +86,9 @@
     background-color:#303030;
     border-color:rgba(0,0,0,0.2)
 }
+
+@media (max-width: 768px){
+    .social-block{
+        padding: 0px;
+    }
+}

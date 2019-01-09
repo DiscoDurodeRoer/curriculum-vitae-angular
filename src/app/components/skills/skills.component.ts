@@ -19,10 +19,10 @@ export class SkillsComponent implements OnInit {
       this.skills = data["habilidades"];
 
       for (let skill of this.skills) {
-        skill.class_color = this.randomColor();
+        skill.class_color = this.chooseColor(skill);
       }
 
-        this.load = true;
+      this.load = true;
 
     }, error => {
       console.log(error);
@@ -31,28 +31,23 @@ export class SkillsComponent implements OnInit {
 
   }
 
-  randomColor() {
+  chooseColor(skill: any) {
 
-    let rand = Math.floor((Math.random() * 4) + 1);
     let class_color = { "color": '', "class_progress": '' };
-    switch (rand) {
-      case 1:
-        class_color.color = "red";
-        class_color.class_progress = "bg-danger";
-        break;
-      case 2:
-        class_color.color = "blue";
-        class_color.class_progress = "bg-info";
-        break;
-      case 3:
-        class_color.color = "yellow";
-        class_color.class_progress = "bg-warning";
-        break;
-      case 4:
-        class_color.color = "green";
-        class_color.class_progress = "bg-success";
-        break;
+    if (skill.valor >= 80 && skill.valor <= 100) {
+      class_color.color = "green";
+      class_color.class_progress = "bg-success";
+    } else if (skill.valor >= 60 && skill.valor < 80) {
+      class_color.color = "blue";
+      class_color.class_progress = "bg-info";
+    } else if (skill.valor >= 40 && skill.valor < 60) {
+      class_color.color = "yellow";
+      class_color.class_progress = "bg-warning";
+    } else {
+      class_color.color = "red";
+      class_color.class_progress = "bg-danger";
     }
+
     return class_color;
   }
 

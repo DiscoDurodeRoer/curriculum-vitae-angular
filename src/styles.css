@@ -13,5 +13,11 @@ body{
     left:50%; 
     transform:translate(-50%, -50%); 
 }
+
+@media (min-width: 568px){
+    .table.table-striped.table-responsive{
+        display: table;
+    }
+}
   
    
