@@ -14,7 +14,8 @@ export class ExperienceComponent implements OnInit {
   constructor(private dataService: DatosService) { }
 
   ngOnInit() {
-
+    this.dataService.url = DatosService.DATOS;
+    this.dataService.responseType = DatosService.JSON;
     this.dataService.getData().subscribe(data => {
       this.experiences = data["experiencias"];
       this.load = true;

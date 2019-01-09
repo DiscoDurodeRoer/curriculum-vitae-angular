@@ -13,7 +13,7 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['datos-personales']">Datos personales</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li *ngIf="showSkills" class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['habilidades']">Habilidades</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
@@ -22,10 +22,10 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['experiencia-laboral']">Experiencia</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li *ngIf="showContact" class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['contacto']">Contacto</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li *ngIf="showWorks" class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['trabajos']">Trabajos</a>
       </li>
     </ul>

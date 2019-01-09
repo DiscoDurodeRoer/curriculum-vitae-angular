@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination'; 
+import { APP_ROUTING } from './app.routes';
 
+// Componets
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,13 +15,15 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { StudiesComponent } from './components/studies/studies.component';
 import { PersonalDataComponent } from './components/personal-data/personal-data.component';
+import { WorksComponent } from './components/works/works.component';
 
+// Services
 import { DatosService } from './services/datos.service'
 import { EmailService } from './services/email.service'
-
-import { APP_ROUTING } from './app.routes';
-import { WorksComponent } from './components/works/works.component';
 import { WorkService } from './services/work.service';
+
+// Pipes
+import { SanitizePipe } from './pipes/sanitize.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { WorkService } from './services/work.service';
     ExperienceComponent,
     StudiesComponent,
     PersonalDataComponent,
-    WorksComponent
+    WorksComponent,
+    SanitizePipe
   ],
   imports: [
     BrowserModule,

@@ -12,10 +12,12 @@ export class SidebarComponent implements OnInit {
   public img_profile: string;
   public name: string;
 
-  constructor(private datosService:DatosService) { }
+  constructor(private dataService:DatosService) { }
 
   ngOnInit() {
-    this.datosService.getData().subscribe(data =>{
+    this.dataService.url = DatosService.DATOS;
+    this.dataService.responseType = DatosService.JSON;
+    this.dataService.getData().subscribe(data =>{
       this.social_networks = data["social_networks"];
       this.img_profile = data["img_profile"];
       this.name = data["name"];

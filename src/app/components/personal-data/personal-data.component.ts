@@ -14,7 +14,8 @@ export class PersonalDataComponent implements OnInit {
   constructor(private dataService: DatosService) { }
 
   ngOnInit() {
-
+    this.dataService.url = DatosService.DATOS;
+    this.dataService.responseType = DatosService.JSON;
     this.dataService.getData().subscribe(data => {
       this.personal_data = data["datos_personales"];
       this.load = true;

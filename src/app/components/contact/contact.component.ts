@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmailService } from '../../services/email.service';
 import { NgForm } from '@angular/forms';
 import { DatosService } from '../../services/datos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -21,10 +22,20 @@ export class ContactComponent implements OnInit {
   public load = false;
 
   constructor(private emailService: EmailService,
-    private datosService: DatosService) { }
+    private dataService: DatosService,
+    private router: Router) { }
 
   ngOnInit() {
-    this.datosService.getData().subscribe(data => {
+    this.dataService.url = DatosService.DATOS;
+    this.dataService.responseType = DatosService.JSON;
+    this.dataService.getData().subscribe(data => {
+      
+      const showPage = data["showContact"];
+
+      if (!showPage) {
+        this.router.navigate(['/inicio']);
+      }
+
       this.emailService.url = data["urlPHPEmail"];
       this.load = true;
     }, error => {

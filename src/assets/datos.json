@@ -217,5 +217,8 @@
     "webUrl": "https://www.discoduroderoer.es",
     "categoryId": 2060,
     "itemsPerPageWorks": "6",
-    "urlPHPEmail": "http://www.fernando-urena-gomez.es/php/email.php"
+    "urlPHPEmail": "http://www.fernando-urena-gomez.es/php/email.php",
+    "showSkills": false,
+    "showContact": true,
+    "showWorks": true
 }
