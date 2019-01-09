@@ -218,7 +218,7 @@
     "categoryId": 2060,
     "itemsPerPageWorks": "6",
     "urlPHPEmail": "http://www.fernando-urena-gomez.es/php/email.php",
-    "showSkills": false,
+    "showSkills": true,
     "showContact": true,
     "showWorks": true
 }

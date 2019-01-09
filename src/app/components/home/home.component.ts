@@ -18,7 +18,10 @@ export class HomeComponent implements OnInit {
     this.dataService.responseType = DatosService.TEXT;
     this.dataService.getData().subscribe(data => {
       this.content = data;
-      this.load = true;
+      setTimeout(() => {
+        this.load = true;
+      }, 5000);
+    
     }, error =>{
       console.log(error);
     });

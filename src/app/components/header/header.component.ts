@@ -3,7 +3,8 @@ import { DatosService } from '../../services/datos.service';
 
 @Component({
   selector: 'header-comp',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
