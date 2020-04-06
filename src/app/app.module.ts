@@ -1,9 +1,14 @@
+import { RepositoriesComponent } from './components/repositories/repositories.component';
+import { CoursesComponent } from './components/courses/courses.component';
+// Modulos
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination'; 
+import { NgxPaginationModule } from 'ngx-pagination';
 import { APP_ROUTING } from './app.routes';
+import { DdrConfigurationModule } from 'ddr-configuration';
+import { DdrSpinnerModule } from 'ddr-spinner';
 
 // Componets
 import { AppComponent } from './app.component';
@@ -21,9 +26,15 @@ import { WorksComponent } from './components/works/works.component';
 import { DatosService } from './services/datos.service'
 import { EmailService } from './services/email.service'
 import { WorkService } from './services/work.service';
+import { DdrConfigurationService } from 'ddr-configuration';
 
 // Pipes
 import { SanitizePipe } from './pipes/sanitize.pipe';
+
+
+export function configFactory(provider: DdrConfigurationService) {
+  return () => provider.getDataFromJSON('assets/config.json');
+}
 
 @NgModule({
   declarations: [
@@ -37,19 +48,30 @@ import { SanitizePipe } from './pipes/sanitize.pipe';
     StudiesComponent,
     PersonalDataComponent,
     WorksComponent,
-    SanitizePipe
+    SanitizePipe,
+    CoursesComponent,
+    RepositoriesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
+    DdrConfigurationModule,
+    DdrSpinnerModule,
     APP_ROUTING
   ],
   providers: [
     DatosService,
     EmailService,
-    WorkService
+    WorkService,
+    DdrConfigurationService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: configFactory,
+      deps: [DdrConfigurationService],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

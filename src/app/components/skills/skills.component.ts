@@ -1,3 +1,5 @@
+import { DdrSpinnerService } from 'ddr-spinner';
+import { DdrConfigurationService } from 'ddr-configuration';
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from '../../services/datos.service';
 import { Router } from '@angular/router';
@@ -13,30 +15,53 @@ export class SkillsComponent implements OnInit {
   public load = false;
 
   constructor(private dataService: DatosService,
-    private router: Router) { }
+    private router: Router,
+    private ddrConfigurationService: DdrConfigurationService,
+    private ddrSpinnerService: DdrSpinnerService
+  ) { }
 
   ngOnInit() {
-    this.dataService.url = DatosService.DATOS;
-    this.dataService.responseType = DatosService.JSON;
-    this.dataService.getData().subscribe(data => {
-      const showPage = data["showSkills"];
 
-      if(!showPage){  
-        this.router.navigate(['/inicio']);
-      }
 
-      this.skills = data["habilidades"];
+    this.ddrSpinnerService.showSpinner();
+    const config = this.ddrConfigurationService.getData("config");
 
-      for (let skill of this.skills) {
-        skill.class_color = this.chooseColor(skill);
-      }
+    if (!config.showSkills) {
+      this.router.navigate(['/inicio']);
+    }
 
-      this.load = true;
+    const data = this.ddrConfigurationService.getData("data");
+    this.skills = data.habilidades;
 
-    }, error => {
-      console.log(error);
-      this.load = true;
-    });
+    for (let skill of this.skills) {
+      skill.class_color = this.chooseColor(skill);
+    }
+
+    this.ddrSpinnerService.hideSpinner();
+
+
+
+    // this.dataService.url = DatosService.DATOS;
+    // this.dataService.responseType = DatosService.JSON;
+    // this.dataService.getData().subscribe(data => {
+    //   const showPage = data["showSkills"];
+
+    //   if (!showPage) {
+    //     this.router.navigate(['/inicio']);
+    //   }
+
+    //   this.skills = data["habilidades"];
+
+    //   for (let skill of this.skills) {
+    //     skill.class_color = this.chooseColor(skill);
+    //   }
+
+    //   this.load = true;
+
+    // }, error => {
+    //   console.log(error);
+    //   this.load = true;
+    // });
 
   }
 

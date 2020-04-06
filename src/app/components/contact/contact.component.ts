@@ -1,8 +1,11 @@
+import { DdrSpinnerService } from 'ddr-spinner';
+import { DdrConfigurationService } from 'ddr-configuration';
 import { Component, OnInit } from '@angular/core';
 import { EmailService } from '../../services/email.service';
 import { NgForm } from '@angular/forms';
 import { DatosService } from '../../services/datos.service';
 import { Router } from '@angular/router';
+import { config } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -23,25 +26,39 @@ export class ContactComponent implements OnInit {
 
   constructor(private emailService: EmailService,
     private dataService: DatosService,
-    private router: Router) { }
+    private router: Router,
+    private ddrConfigurationService: DdrConfigurationService,
+    private ddrSpinnerService: DdrSpinnerService) { }
 
   ngOnInit() {
-    this.dataService.url = DatosService.DATOS;
-    this.dataService.responseType = DatosService.JSON;
-    this.dataService.getData().subscribe(data => {
-      
-      const showPage = data["showContact"];
 
-      if (!showPage) {
-        this.router.navigate(['/inicio']);
-      }
+    this.ddrSpinnerService.showSpinner();
+    const config = this.ddrConfigurationService.getData("config");
 
-      this.emailService.url = data["urlPHPEmail"];
-      this.load = true;
-    }, error => {
-      console.log("Error: " + error);
-      this.load = true;
-    });
+    if (!config.showContact) {
+      this.router.navigate(['/inicio']);
+    }
+
+    this.emailService.url = config.urlPHPEmail;
+    this.ddrSpinnerService.hideSpinner();
+
+
+    // this.dataService.url = DatosService.DATOS;
+    // this.dataService.responseType = DatosService.JSON;
+    // this.dataService.getData().subscribe(data => {
+
+    //   const showPage = data["showContact"];
+
+    //   if (!showPage) {
+    //     this.router.navigate(['/inicio']);
+    //   }
+
+    //   this.emailService.url = data["urlPHPEmail"];
+    //   this.load = true;
+    // }, error => {
+    //   console.log("Error: " + error);
+    //   this.load = true;
+    // });
   }
 
   sendEmail(form: NgForm) {

@@ -1,0 +1,38 @@
+<div id="works" class="col-12 h-100">
+  <div *ngIf="courses && courses.length == 0">
+    No hay repositorios
+  </div>
+
+  <ng-container *ngIf="courses && courses.length > 0">
+    <div class="row">
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 mb-5"
+        *ngFor="let course of courses | paginate: {itemsPerPage: itemsPerPage, currentPage: page}">
+
+        <div class="card h-100">
+          <img class="card-image-top w-100 img-fluid" [src]="'assets/img/courses/' + course.id + '.jpg'" />
+          <div class="card-body">
+            <h3 class="card-title">{{course.title}}</h3>
+          </div>
+          <div class="card-footer">
+            <a class="btn btn-block btn-primary" role="button" [href]="'https://www.udemy.com' + course.url" target="_blank">Ir al curso</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row" *ngIf="courses && courses.length > itemsPerPage">
+      <div class="col-12 text-center mb-5">
+        <div class="pagination-footer">
+          <pagination-controls nextLabel="Siguiente" previousLabel="Anterior" (pageChange)="page = $event">
+          </pagination-controls>
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+
+
+  <ddr-spinner [embedded]="true"></ddr-spinner>
+</div>

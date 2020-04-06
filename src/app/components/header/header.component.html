@@ -28,7 +28,17 @@
       <li *ngIf="showWorks" class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['trabajos']">Trabajos</a>
       </li>
+      <li *ngIf="showCourses" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['cursos']">Cursos</a>
+      </li>
+      <li *ngIf="showRepositories" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['repositorios']">Repositorios</a>
+      </li>
     </ul>
 
   </div>
 </nav>
+
+
+
+

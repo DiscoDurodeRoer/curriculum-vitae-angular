@@ -1,3 +1,5 @@
+import { RepositoriesComponent } from './components/repositories/repositories.component';
+import { CoursesComponent } from './components/courses/courses.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component'
 import { ContactComponent } from './components/contact/contact.component';
@@ -15,6 +17,10 @@ const APP_ROUTES: Routes = [
     {path: 'estudios', component: StudiesComponent },
     {path: 'experiencia-laboral', component: ExperienceComponent },
     {path: 'trabajos', component: WorksComponent },
+    {path: 'experiencia-laboral', component: ExperienceComponent },
+    {path: 'trabajos', component: WorksComponent },
+    {path: 'cursos', component: CoursesComponent },
+    {path: 'repositorios', component: RepositoriesComponent },
     {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
 ];
 

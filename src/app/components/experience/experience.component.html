@@ -1,5 +1,6 @@
-<div id="experience" class="col-12 h-100">
-    <ng-container *ngIf="load">
+<div id="experience" class="row">
+    <div class="col-12 h-100">
+
         <h1>Experiencias</h1>
         <table class="table table-striped  table-responsive">
             <thead>
@@ -19,10 +20,7 @@
                 </tr>
             </tbody>
         </table>
-    </ng-container>
-    <div class="h-100" *ngIf="!load">
-        <div class="spinner">
-            <img src="./assets/img/spinner.gif" />
-        </div>
     </div>
+    
+    <ddr-spinner></ddr-spinner>
 </div>

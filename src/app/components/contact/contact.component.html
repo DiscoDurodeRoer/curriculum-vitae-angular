@@ -1,6 +1,6 @@
 <div id="contact" class="col-12 h-100">
 
-    <div class="bg-light" *ngIf="load">
+    <div class="bg-light">
 
         <div *ngIf="enviado && correcto" class="alert alert-success" role="alert">
             ¡Mensaje enviado correctamente!
@@ -54,9 +54,7 @@
             </fieldset>
         </form>
     </div>
-    <div class="h-100" *ngIf="!load">
-        <div class="spinner">
-            <img src="./assets/img/spinner.gif" />
-        </div>
-    </div>
+  
+    <ddr-spinner></ddr-spinner>
+
 </div>
