@@ -1,0 +1,20 @@
+<div id="sidebar" class="pt-3">
+  <div class="row">
+    <div class="col-md-12 col-6 text-center">
+      <img class="img-fluid rounded-circle" [src]="img_profile">
+    </div>
+    <div class="col-md-12 col-6">
+      <h1>Curriculum vitae</h1>
+      <h2>{{name}}</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="social-block col-md-12 col-6 mb-md-2" *ngFor="let sn of social_networks">
+      <a class="btn btn-block rounded-0 btn-social btn-{{sn.icon}}" href="{{sn.link}}" target="_blank">
+        <span class="fa fa-{{sn.icon}}"></span> {{sn.name}}
+      </a>
+    </div>
+
+  </div>
+</div>

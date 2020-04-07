@@ -1,0 +1,23 @@
+html, body{
+    height: 100%;
+}
+
+
+body{
+    overflow-x: hidden;
+}
+
+.spinner{
+    position:absolute; 
+    top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%); 
+}
+
+@media (min-width: 568px){
+    .table.table-striped.table-responsive{
+        display: table;
+    }
+}
+  
+   

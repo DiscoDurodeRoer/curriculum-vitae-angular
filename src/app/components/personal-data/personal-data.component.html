@@ -1,0 +1,21 @@
+<div id="personal-data" class="col-12 h-100">
+
+    <h1>Datos personales</h1>
+    <table class="table table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Campo</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of personal_data">
+                <td>{{row.column_display}}</td>
+                <td>{{row.column_value}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ddr-spinner [embedded]="true"></ddr-spinner>
+
+</div>
