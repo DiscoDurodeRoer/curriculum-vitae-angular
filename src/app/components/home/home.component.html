@@ -1,9 +1,0 @@
-<div id="home" class="col-12 h-100">
-  <div *ngIf="load" [innerHTML]="content | sanitize"></div>
-
-  <div class="h-100" *ngIf="!load">
-    <div class="spinner">
-      <img src="./assets/img/spinner.gif" />
-    </div>
-  </div>
-</div>
