@@ -1,6 +1,5 @@
 import { DdrConfigurationService } from 'ddr-configuration';
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from '../../services/datos.service';
 import { DdrSpinnerService } from 'ddr-spinner';
 
 @Component({
@@ -14,7 +13,6 @@ export class PersonalDataComponent implements OnInit {
   public load = false;
 
   constructor(
-    private dataService: DatosService,
     private ddrConfigurationService: DdrConfigurationService,
     private ddrSpinnerService: DdrSpinnerService
   
@@ -28,14 +26,6 @@ export class PersonalDataComponent implements OnInit {
     this.personal_data = data.datos_personales;
     
     this.ddrSpinnerService.hideSpinner();
-
-    // this.dataService.url = DatosService.DATOS;
-    // this.dataService.responseType = DatosService.JSON;
-    // this.dataService.getData().subscribe(data => {
-    //   this.personal_data = data["datos_personales"];
-    //   this.load = true;
-    // }
-    // );
 
   }
 

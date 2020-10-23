@@ -1,7 +1,6 @@
 import { DdrSpinnerService } from 'ddr-spinner';
 import { DdrConfigurationService } from 'ddr-configuration';
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from '../../services/datos.service';
 import { WorkService } from '../../services/work.service';
 import { Router } from '@angular/router';
 
@@ -18,7 +17,7 @@ export class WorksComponent implements OnInit {
 
   public page: number = 1;
 
-  constructor(private dataService: DatosService,
+  constructor(
     private works: WorkService,
     private router: Router,
     private ddrConfigurationService: DdrConfigurationService,
@@ -39,9 +38,6 @@ export class WorksComponent implements OnInit {
     this.works.categoryId = config.categoryId;
     this.itemsPerPage = config.itemsPerPageWorks;
 
-    // this.dataService.url = DatosService.DATOS;
-    // this.dataService.responseType = DatosService.JSON;
-    // this.dataService.getData().subscribe(data => {
 
     this.works.getPosts().subscribe(postData => {
 
@@ -56,11 +52,6 @@ export class WorksComponent implements OnInit {
       console.log(error);
       this.ddrSpinnerService.hideSpinner();
     });
-
-    // }, error => {
-    //   console.log(error);
-    //   this.load = true
-    // });
 
   }
 

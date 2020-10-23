@@ -1,7 +1,6 @@
 import { DdrSpinnerService } from 'ddr-spinner';
 import { DdrConfigurationService } from 'ddr-configuration';
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from '../../services/datos.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +13,7 @@ export class SkillsComponent implements OnInit {
   public skills: any[];
   public load = false;
 
-  constructor(private dataService: DatosService,
+  constructor(
     private router: Router,
     private ddrConfigurationService: DdrConfigurationService,
     private ddrSpinnerService: DdrSpinnerService
@@ -38,30 +37,6 @@ export class SkillsComponent implements OnInit {
     }
 
     this.ddrSpinnerService.hideSpinner();
-
-
-
-    // this.dataService.url = DatosService.DATOS;
-    // this.dataService.responseType = DatosService.JSON;
-    // this.dataService.getData().subscribe(data => {
-    //   const showPage = data["showSkills"];
-
-    //   if (!showPage) {
-    //     this.router.navigate(['/inicio']);
-    //   }
-
-    //   this.skills = data["habilidades"];
-
-    //   for (let skill of this.skills) {
-    //     skill.class_color = this.chooseColor(skill);
-    //   }
-
-    //   this.load = true;
-
-    // }, error => {
-    //   console.log(error);
-    //   this.load = true;
-    // });
 
   }
 

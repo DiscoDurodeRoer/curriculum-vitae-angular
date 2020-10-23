@@ -70,10 +70,10 @@
         ],
         "estudios": [
             {
-                "rango": "2010-2012",
+                "rango": "2016-2017",
                 "lugar": "IES Maestre de Calatrava, Ciudad Real",
-                "titulo": "Técnico en Microsistemas Informáticos y Redes",
-                "nota": "9.31"
+                "titulo": "Técnico en desarrollo de aplicaciones web (e-learning)",
+                "nota": "9"
             },
             {
                 "rango": "2012-2014",
@@ -82,13 +82,34 @@
                 "nota": "9.64"
             },
             {
-                "rango": "2016-2017",
+                "rango": "2010-2012",
                 "lugar": "IES Maestre de Calatrava, Ciudad Real",
-                "titulo": "Técnico en desarrollo de aplicaciones web (e-learning)",
-                "nota": "9"
+                "titulo": "Técnico en Microsistemas Informáticos y Redes",
+                "nota": "9.31"
             }
         ],
         "cursos": [
+            {
+                "anio": "2018",
+                "nombre": "Lua Programming and Game Development with LÖVE",
+                "lugar": "Udemy",
+                "horas": "5.5",
+                "tipo": "Online"
+            },
+            {
+                "anio": "2018",
+                "nombre": "Bootstrap 4: El Curso Completo, Práctico y Desde Cero",
+                "lugar": "Udemy",
+                "horas": "19",
+                "tipo": "Online"
+            },
+            {
+                "anio": "2012",
+                "nombre": "Community manager",
+                "lugar": "Universidad Deusto",
+                "horas": "300",
+                "tipo": "A distancia"
+            },
             {
                 "anio": "2011",
                 "nombre": "Cisco Information Technology Essentials: Hardware and Software",
@@ -102,27 +123,6 @@
                 "lugar": "Universidad Deusto",
                 "horas": "250",
                 "tipo": "A distancia"
-            },
-            {
-                "anio": "2012",
-                "nombre": "Community manager",
-                "lugar": "Universidad Deusto",
-                "horas": "300",
-                "tipo": "A distancia"
-            },
-            {
-                "anio": "2018",
-                "nombre": "Bootstrap 4: El Curso Completo, Práctico y Desde Cero",
-                "lugar": "Udemy",
-                "horas": "19",
-                "tipo": "Online"
-            },
-            {
-                "anio": "2018",
-                "nombre": "Lua Programming and Game Development with LÖVE",
-                "lugar": "Udemy",
-                "horas": "5.5",
-                "tipo": "Online"
             }
         ],
         "experiencias": [
@@ -175,6 +175,10 @@
             {
                 "nombre": "Angular",
                 "valor": "90"
+            },
+            {
+                "nombre": "IONIC",
+                "valor": "80"
             },
             {
                 "nombre": "Python",
@@ -250,6 +254,6 @@
         "showRepositories": true,
         "urlGithubRepositories": "https://api.github.com/users/discoduroderoer/repos",
         "urlCoursesUdemy": "https://www.udemy.com/instructor-api/v1/taught-courses/courses/",
-        "tokenUdemy": "WGSNaTeKa3cIjZCDKd9Dw7ORF68pF6B1"
+        "tokenUdemy": "8lb0v4ullQ8pU6ZQj8zyeHfyu2oxextO"
     }
 }

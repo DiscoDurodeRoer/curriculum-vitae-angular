@@ -1,5 +1,3 @@
-import { RepositoriesComponent } from './components/repositories/repositories.component';
-import { CoursesComponent } from './components/courses/courses.component';
 // Modulos
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
@@ -21,16 +19,23 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { StudiesComponent } from './components/studies/studies.component';
 import { PersonalDataComponent } from './components/personal-data/personal-data.component';
 import { WorksComponent } from './components/works/works.component';
+import { RepositoriesComponent } from './components/repositories/repositories.component';
+import { CoursesComponent } from './components/courses/courses.component';
 
 // Services
-import { DatosService } from './services/datos.service'
+import { DataService } from './services/data.service'
 import { EmailService } from './services/email.service'
 import { WorkService } from './services/work.service';
 import { DdrConfigurationService } from 'ddr-configuration';
+import { TranslateService } from './services/translate.service';
 
 // Pipes
 import { SanitizePipe } from './pipes/sanitize.pipe';
+import { TranslatePipe } from './pipes/translate.pipe';
 
+export function translateFactory(provider: TranslateService) {
+  return () => provider.getData();
+}
 
 export function configFactory(provider: DdrConfigurationService) {
   return () => provider.getDataFromJSON('assets/config.json');
@@ -50,7 +55,8 @@ export function configFactory(provider: DdrConfigurationService) {
     WorksComponent,
     SanitizePipe,
     CoursesComponent,
-    RepositoriesComponent
+    RepositoriesComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
@@ -62,7 +68,7 @@ export function configFactory(provider: DdrConfigurationService) {
     APP_ROUTING
   ],
   providers: [
-    DatosService,
+    DataService,
     EmailService,
     WorkService,
     DdrConfigurationService,
@@ -71,7 +77,14 @@ export function configFactory(provider: DdrConfigurationService) {
       useFactory: configFactory,
       deps: [DdrConfigurationService],
       multi: true
-    }
+    },
+    TranslateService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: translateFactory,
+      deps: [TranslateService],
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })

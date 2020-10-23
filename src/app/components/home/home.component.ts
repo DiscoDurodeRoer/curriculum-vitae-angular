@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from '../../services/datos.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -11,15 +11,15 @@ export class HomeComponent implements OnInit {
   public content;
   public load = false;
 
-  constructor(private dataService:DatosService) { }
+  constructor(
+    private dataService: DataService
+  ) { }
 
   ngOnInit() {
-    this.dataService.url = DatosService.INICIO;
-    this.dataService.responseType = DatosService.TEXT;
-    this.dataService.getData().subscribe(data => {
+    this.dataService.getHMTL().subscribe(data => {
       this.content = data;
       this.load = true;
-    }, error =>{
+    }, error => {
       console.log(error);
     });
   }
