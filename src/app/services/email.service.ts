@@ -15,7 +15,7 @@ export class EmailService {
     sendEmail(data) {
 
         let options = new HttpHeaders()
-            .set('Content-Type', 'Content-Type:text/plain; charset=UTF-8');
+            .set('Content-Type', 'application/json');
         return this.http.post(this._url, data, { headers: options });
     }
 

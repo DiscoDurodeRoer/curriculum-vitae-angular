@@ -61,7 +61,7 @@ export class ContactComponent implements OnInit {
       this.correcto = false;
       this.enviado = true;
       this.load = true;
-      console.log('Err: ' + error);
+      console.log('Err: ' , error);
     });
   }
 

@@ -64,8 +64,8 @@
                 "column_value": "Si"
             },
             {
-                "column_display": "Ciudad preferible para trabajar",
-                "column_value": "Ciudad Real"
+                "column_display": "Disponibilidad para viajar",
+                "column_value": "Si"
             }
         ],
         "estudios": [
@@ -127,9 +127,15 @@
         ],
         "experiencias": [
             {
-                "rango": "Diciembre 2017 - Actualidad",
+                "rango": "Febrero 2021 - Actualidad",
+                "compania": "Moontech",
+                "posicion": "Programador Senior FullStack",
+                "descripcion": "Trabajando realizando aplicaciones del area de industria"
+            },
+            {
+                "rango": "Diciembre 2017 - Febrero 2021",
                 "compania": "Indra",
-                "posicion": "Programador",
+                "posicion": "Programador Front-end",
                 "descripcion": "Trabajando realizando aplicaciones del area de Sanidad"
             },
             {
@@ -163,7 +169,7 @@
                 "descripcion": "Encargado de las redes y del mantenimiento y funcionamiento de los equipos de la empresa"
             }
         ],
-        "habilidades": [
+           "habilidades": [
             {
                 "nombre": "Java SE",
                 "valor": "90"
@@ -177,7 +183,19 @@
                 "valor": "90"
             },
             {
-                "nombre": "IONIC",
+                "nombre": "Nest JS",
+                "valor": "70"
+            },
+            {
+                "nombre": "Bootstrap 4",
+                "valor": "90"
+            },
+            {
+                "nombre": "TypeORM",
+                "valor": "70"
+            },
+            {
+                "nombre": "Sequelize",
                 "valor": "80"
             },
             {
@@ -186,7 +204,7 @@
             },
             {
                 "nombre": "PHP",
-                "valor": "60"
+                "valor": "50"
             },
             {
                 "nombre": "Android",
@@ -223,22 +241,6 @@
             {
                 "nombre": "Magento",
                 "valor": "30"
-            },
-            {
-                "nombre": "Bootstrap",
-                "valor": "80"
-            },
-            {
-                "nombre": "HTML",
-                "valor": "80"
-            },
-            {
-                "nombre": "Lua",
-                "valor": "60"
-            },
-            {
-                "nombre": "Love2d",
-                "valor": "60"
             }
         ]
     },
@@ -246,7 +248,7 @@
         "webUrl": "https://www.discoduroderoer.es",
         "categoryId": 2060,
         "itemsPerPageWorks": "6",
-        "urlPHPEmail": "http://www.fernando-urena-gomez.es/php/email.php",
+        "urlPHPEmail": "https://www.fernando-urena-gomez.es/php/email.php",
         "showSkills": true,
         "showContact": true,
         "showWorks": true,
