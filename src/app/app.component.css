@@ -1,10 +1,9 @@
+html, body {
+    overflow-x:hidden 
+} 
 
-.content{
-    padding-top: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-
-
+html body .content{
+    padding: 2% !important;
 }
 
 @media (max-width: 767px){
@@ -18,12 +17,17 @@
 @media (min-width: 768px){
 
     .content{
-        height: 94%;
+        height: 100%;
         overflow: auto;
+        overflow-x: hidden;
     }
 
     .panel-left{
         overflow: hidden;
     }
 
+}
+
+ddr-detail app-menu .nav-link {
+    color: #000;
 }

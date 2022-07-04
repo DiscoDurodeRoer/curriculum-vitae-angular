@@ -1,0 +1,101 @@
+
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-facebook:hover {
+    color: #fff;
+    background-color: #2d4373;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-linkedin {
+    color: #fff;
+    background-color: #007bb6;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-linkedin:hover {
+    color: #fff;
+    background-color: #005983;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-youtube{
+    color: #fff;
+    background-color: #ff0000;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-youtube:hover{
+    color: #fff;
+    background-color: #ff0000d7;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-twitter {
+    color: #fff;
+    background-color: #55acee;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-twitter:hover {
+    color: #fff;
+    background-color: #2795e9;
+    border-color: rgba(0,0,0,0.2);
+}
+
+ 
+.btn-globe{
+    color: rgb(255, 255, 255);
+    background-color: #665c5c;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-globe:hover{
+    color: #333;
+    background-color: #534a4a;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-github{
+    color:#fff;
+    background-color:#444;
+    border-color:rgba(0,0,0,0.2)
+}
+.btn-github:hover{
+    color:#fff;
+    background-color:#303030;
+    border-color:rgba(0,0,0,0.2)
+}
+
+@media (max-width: 768px){
+    .social-block{
+        padding: 0px;
+    }
+}
+
+
+.nav-item:hover {
+    background: #FFF;
+}
+
+.nav-item:hover .nav-link {
+    color: #000;
+}
+
+.nav-link {
+    color: #FFF;
+    font-size: 18px;
+}
+
+.active .nav-link {
+    background: #FFF;
+    color: #000;
+}
+
+.active .nav-link.border-menu {
+    border-left: 10px solid #007bff;
+}

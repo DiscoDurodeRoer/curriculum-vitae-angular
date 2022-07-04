@@ -1,6 +1,6 @@
-<div id="works" class="col-12 h-100">
+<div id="repositories" class="col-12 h-100">
   <div *ngIf="repositories && repositories.length == 0">
-    No hay repositorios
+    {{'label.no.repositories' | translate}}
   </div>
 
   <ng-container *ngIf="repositories && repositories.length > 0">
@@ -10,13 +10,13 @@
         *ngFor="let repository of repositories | paginate: {itemsPerPage: itemsPerPage, currentPage: page}">
 
         <div class="card h-100">
-          <img class="card-image-top w-100 img-fluid" [src]="'assets/img/repositories/' + repository.language + '.jpg'" />
+          <img class="card-image-top w-100 img-fluid" [src]="'assets/img/languages/' + repository.language + '.jpg'" />
           <div class="card-body">
             <h3 class="card-title">{{repository.name}}</h3>
             <p class="card-text">{{repository.description}}</p>
           </div>
           <div class="card-footer">
-            <a class="btn btn-block btn-primary" role="button" [href]="repository.html_url" target="_blank">Ir al repositorio</a>
+            <a class="btn btn-block btn-primary" role="button" [href]="repository.html_url" target="_blank">{{'label.go.to.repository' | translate}}</a>
           </div>
         </div>
       </div>
@@ -26,7 +26,10 @@
     <div class="row" *ngIf="repositories && repositories.length > itemsPerPage">
       <div class="col-12 text-center mb-5">
         <div class="pagination-footer">
-          <pagination-controls nextLabel="Siguiente" previousLabel="Anterior" (pageChange)="page = $event">
+          <pagination-controls 
+            [nextLabel]="'label.next' | translate" 
+            [previousLabel]="'label.previous' | translate"  
+            (pageChange)="page = $event">
           </pagination-controls>
         </div>
       </div>

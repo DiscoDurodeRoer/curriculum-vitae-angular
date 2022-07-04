@@ -1,25 +1,25 @@
 import { RepositoriesComponent } from './components/repositories/repositories.component';
-import { CoursesComponent } from './components/courses/courses.component';
+import { CoursesUdemyComponent } from './components/courses-udemy/courses-udemy.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component'
 import { ContactComponent } from './components/contact/contact.component';
-import { PersonalDataComponent } from './components/personal-data/personal-data.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { StudiesComponent } from './components/studies/studies.component';
-import { ExperienceComponent } from './components/experience/experience.component';
+import { ExperienceComponent } from './components/experiences/experiences.component';
 import { WorksComponent } from './components/works/works.component';
+import { PersonalComponent } from './components/personal/personal.component';
 
 const APP_ROUTES: Routes = [
     {path: 'inicio', component: HomeComponent },
     {path: 'contacto', component: ContactComponent },
-    {path: 'datos-personales', component: PersonalDataComponent },
+    {path: 'datos-personales', component: PersonalComponent },
     {path: 'habilidades', component: SkillsComponent },
     {path: 'estudios', component: StudiesComponent },
     {path: 'experiencia-laboral', component: ExperienceComponent },
     {path: 'trabajos', component: WorksComponent },
     {path: 'experiencia-laboral', component: ExperienceComponent },
     {path: 'trabajos', component: WorksComponent },
-    {path: 'cursos', component: CoursesComponent },
+    {path: 'cursos', component: CoursesUdemyComponent },
     {path: 'repositorios', component: RepositoriesComponent },
     {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
 ];

@@ -1,5 +1,5 @@
-import { DdrSpinnerService } from 'ddr-spinner';
-import { DdrConfigurationService } from 'ddr-configuration';
+import { Post } from './../../models/post';
+import { DdrConfigService, DdrSpinnerService } from 'ddr-library';
 import { Component, OnInit } from '@angular/core';
 import { WorkService } from '../../services/work.service';
 import { Router } from '@angular/router';
@@ -11,32 +11,32 @@ import { Router } from '@angular/router';
 })
 export class WorksComponent implements OnInit {
 
-  public posts;
-
-  public itemsPerPage;
-
-  public page: number = 1;
+  public posts: Post[];
+  public itemsPerPage: number;
+  public page: number;
 
   constructor(
     private works: WorkService,
     private router: Router,
-    private ddrConfigurationService: DdrConfigurationService,
+    private ddrConfigurationService: DdrConfigService,
     private ddrSpinnerService: DdrSpinnerService
-  ) { }
+  ) { 
+    this.page = 1;
+  }
 
   ngOnInit() {
 
     this.ddrSpinnerService.showSpinner();
 
-    const config = this.ddrConfigurationService.getData("config");
+    const showWorks = this.ddrConfigurationService.getData("config.showWorks");
 
-    if (!config.showWorks) {
+    if (!showWorks) {
       this.router.navigate(['/inicio']);
     }
 
-    this.works.webUrl = config.webUrl;
-    this.works.categoryId = config.categoryId;
-    this.itemsPerPage = config.itemsPerPageWorks;
+    this.works.webUrl = this.ddrConfigurationService.getData("config.webUrl");
+    this.works.categoryId = this.ddrConfigurationService.getData("config.categoryId");
+    this.itemsPerPage = this.ddrConfigurationService.getData("config.itemsPerPageWorks");
 
 
     this.works.getPosts().subscribe(postData => {

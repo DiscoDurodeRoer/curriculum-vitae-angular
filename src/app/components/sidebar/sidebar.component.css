@@ -1,94 +1,27 @@
-
-
-
 #sidebar{
     background: #000;
     height: 100%;
     z-index: 1;
+    overflow: auto;
 }
 
-
-#sidebar h1, #sidebar h2{
-    color: #fff;
-    text-align: center;
+.name{
+    font-size: 20px;
 }
 
-/* Botones */
-
-.btn-facebook {
-    color: #fff;
-    background-color: #3b5998;
-    border-color: rgba(0,0,0,0.2);
+.icon-mobile{
+    font-size: 30px;
 }
 
-.btn-facebook:hover {
-    color: #fff;
-    background-color: #2d4373;
-    border-color: rgba(0,0,0,0.2);
+@media (max-width: 576px) {
+    .profile{
+        width: 40px;
+        height: 40px;
+    }
 }
-
-.btn-linkedin {
-    color: #fff;
-    background-color: #007bb6;
-    border-color: rgba(0,0,0,0.2);
-}
-
-.btn-linkedin:hover {
-    color: #fff;
-    background-color: #005983;
-    border-color: rgba(0,0,0,0.2);
-}
-
-.btn-youtube{
-    color: #fff;
-    background-color: #ff0000;
-    border-color: rgba(0,0,0,0.2);
-}
-
-.btn-youtube:hover{
-    color: #fff;
-    background-color: #ff0000d7;
-    border-color: rgba(0,0,0,0.2);
-}
-
-.btn-twitter {
-    color: #fff;
-    background-color: #55acee;
-    border-color: rgba(0,0,0,0.2);
-}
-
-.btn-twitter:hover {
-    color: #fff;
-    background-color: #2795e9;
-    border-color: rgba(0,0,0,0.2);
-}
-
- 
-.btn-globe{
-    color: rgb(255, 255, 255);
-    background-color: #665c5c;
-    border-color: rgba(0,0,0,0.2);
-}
-
-.btn-globe:hover{
-    color: #333;
-    background-color: #534a4a;
-    border-color: rgba(0,0,0,0.2);
-}
-
-.btn-github{
-    color:#fff;
-    background-color:#444;
-    border-color:rgba(0,0,0,0.2)
-}
-.btn-github:hover{
-    color:#fff;
-    background-color:#303030;
-    border-color:rgba(0,0,0,0.2)
-}
-
-@media (max-width: 768px){
-    .social-block{
-        padding: 0px;
+@media (min-width: 576px) {
+    .profile {
+        width: 140px;
+        height: 140px;
     }
 }

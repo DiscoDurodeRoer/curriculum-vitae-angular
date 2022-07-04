@@ -1,7 +1,8 @@
-import { DdrSpinnerService } from 'ddr-spinner';
-import { DdrConfigurationService } from 'ddr-configuration';
+import { ContactForm } from './../../models/contact';
+import { DdrSpinnerService, DdrConfigService, DdrToastService } from 'ddr-library';
 import { Component, OnInit } from '@angular/core';
 import { EmailService } from '../../services/email.service';
+import { TranslateService } from '../../services/translate.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -12,56 +13,66 @@ import { Router } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
-  public dataForm = {
-    "name": "",
-    "email": "",
-    "mensaje": ""
-  }
+  public dataForm: ContactForm;
 
-  public enviado = false;
-  public correcto = true;
-  public load = false;
+  public location: any;
+  public optionsMap: any;
 
   constructor(
     private emailService: EmailService,
     private router: Router,
-    private ddrConfigurationService: DdrConfigurationService,
-    private ddrSpinnerService: DdrSpinnerService
-  ) { }
+    private ddrConfigurationService: DdrConfigService,
+    private ddrSpinnerService: DdrSpinnerService,
+    private ddrToast: DdrToastService,
+    private translate: TranslateService
+  ) { 
+  }
 
   ngOnInit() {
 
-    this.ddrSpinnerService.showSpinner();
-    const config = this.ddrConfigurationService.getData("config");
+    this.dataForm = new ContactForm();
+    const showContact = this.ddrConfigurationService.getData("config.showContact");
 
-    if (!config.showContact) {
+    if (!showContact) {
       this.router.navigate(['/inicio']);
     }
 
-    this.emailService.url = config.urlPHPEmail;
-    this.ddrSpinnerService.hideSpinner();
+    this.emailService.url = this.ddrConfigurationService.getData("config.urlPHPEmail");
+    this.location = this.ddrConfigurationService.getData('data.location');
+    this.optionsMap = {
+      center: {
+        lat: this.location.position.lat,
+        lng: this.location.position.lng
+      },
+      zoom: 6
+    };
 
   }
 
   sendEmail(form: NgForm) {
 
-    this.load = false;
+
+    this.ddrSpinnerService.showSpinner();
 
     this.emailService.sendEmail(this.dataForm).subscribe(res => {
 
       if (res === 1) {
-        this.correcto = true;
+        this.ddrToast.addSuccessMessage(
+          this.translate.getTranslate("label.success"), 
+          this.translate.getTranslate("label.send.success")
+        );
+        this.dataForm = new ContactForm();
       } else {
-        this.correcto = false;
+        this.ddrToast.addErrorMessage(
+          this.translate.getTranslate("label.error"), 
+          this.translate.getTranslate("label.send.error")  
+        );
       }
-      this.enviado = true;
-      this.load = true;
 
+      this.ddrSpinnerService.hideSpinner();
     }, error => {
-      this.correcto = false;
-      this.enviado = true;
-      this.load = true;
       console.log('Err: ' , error);
+      this.ddrSpinnerService.hideSpinner();
     });
   }
 

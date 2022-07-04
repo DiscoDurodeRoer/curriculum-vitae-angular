@@ -1,6 +1,6 @@
-import { DdrConfigurationService } from 'ddr-configuration';
+import { PersonalData } from './../../models/personal-data';
 import { Component, OnInit } from '@angular/core';
-import { DdrSpinnerService } from 'ddr-spinner';
+import { DdrConfigService, DdrSpinnerService } from 'ddr-library';
 
 @Component({
   selector: 'app-personal-data',
@@ -9,24 +9,14 @@ import { DdrSpinnerService } from 'ddr-spinner';
 })
 export class PersonalDataComponent implements OnInit {
 
-  public personal_data: any[];
-  public load = false;
+  public personalData: PersonalData[];
 
   constructor(
-    private ddrConfigurationService: DdrConfigurationService,
-    private ddrSpinnerService: DdrSpinnerService
-  
+    private ddrConfig: DdrConfigService
   ) { }
 
   ngOnInit() {
-
-    
-    this.ddrSpinnerService.showSpinner();
-    const data = this.ddrConfigurationService.getData("data");
-    this.personal_data = data.datos_personales;
-    
-    this.ddrSpinnerService.hideSpinner();
-
+    this.personalData = this.ddrConfig.getData("data.personalData");
   }
 
 }

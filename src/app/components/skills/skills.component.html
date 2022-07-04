@@ -1,11 +1,34 @@
 <div id="skills" class="row">
   <div class="col-12 h-100">
-    <div *ngFor="let skill of skills" class="progress" [ngClass]="skill.class_color.color">
-      <div class="progress-bar progress-bar-striped active" [ngClass]="skill.class_color.class_progress"
-        [ngStyle]="{'width.%': skill.valor}">
-        <div class="progress-value">{{skill.nombre+' ('+skill.valor+'%)'}}</div>
-      </div>
-    </div>
+  
+    <ddr-tabs class="text-center">
+      <ddr-tab-item [title]="'label.all' | translate">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" *ngFor="let skill of skillsAll">
+            <div class="card">
+              <img class="card-image-top w-100 img-fluid" [src]="skill.thumbnail" />
+              <div class="card-body text-center">
+                <h3 class="card-title">{{skill.name}}</h3>
+                <p class="card-text">{{skill.years + ' ' +('label.years.experience' | translate)}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ddr-tab-item>
+      <ddr-tab-item *ngFor="let group of skills | keyvalue" [title]="('label.' + group.key) | translate">          
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" *ngFor="let skill of group.value">
+            <div class="card">
+              <img class="card-image-top w-100 img-fluid" [src]="skill.thumbnail" />
+              <div class="card-body text-center">
+                <h3 class="card-title">{{skill.name}}</h3>
+                <p class="card-text">{{skill.years + ' ' +('label.years.experience' | translate)}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ddr-tab-item>
+    </ddr-tabs>  
   </div>
 
   <ddr-spinner></ddr-spinner>

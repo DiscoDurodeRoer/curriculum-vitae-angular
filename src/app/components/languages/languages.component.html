@@ -1,0 +1,19 @@
+<div id="languages" class="col-12 h-100">
+
+  <table class="table table-striped table-responsive">
+      <thead>
+          <tr>
+              <th>{{'label.language' | translate}}</th>
+              <th>{{'label.level' | translate}}</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let language of languages">
+              <td>{{language.name | translate}}</td>
+              <td>{{language.level | translate}}</td>
+          </tr>
+      </tbody>
+  </table>
+
+</div>
+        

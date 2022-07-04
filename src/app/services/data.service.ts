@@ -2,7 +2,6 @@ import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/internal/operators';
 
 @Injectable()
 export class DataService {

@@ -1,8 +1,6 @@
-import { Router } from '@angular/router';
-import { DdrConfigurationService } from 'ddr-configuration';
-import { DdrSpinnerService } from 'ddr-spinner';
+import { Course } from './../../models/course';
+import { DdrConfigService } from 'ddr-library';
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from 'src/app/services/courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -11,40 +9,14 @@ import { CoursesService } from 'src/app/services/courses.service';
 })
 export class CoursesComponent implements OnInit {
 
-  public courses;
-  public itemsPerPage;
-  public page: number = 1;
+  public courses: Course[];
 
   constructor(
-    private coursesService: CoursesService,
-    private router: Router,
-    private ddrConfigurationService: DdrConfigurationService,
-    private ddrSpinnerService: DdrSpinnerService
+    private ddrConfigurationService: DdrConfigService
   ) { }
 
   ngOnInit() {
-
-    this.ddrSpinnerService.showSpinner();
-    const config = this.ddrConfigurationService.getData("config");
-
-    if (!config.showCourses) {
-      this.router.navigate(['/inicio']);
-    }
-
-    this.itemsPerPage = config.itemsPerPageWorks;
-
-    this.coursesService.getCourses().subscribe(data => {
-      
-      let coursesData = data.results;
-      
-      this.courses = coursesData.filter(course => course.published_title);
-
-      this.ddrSpinnerService.hideSpinner();
-    }, error => {
-      console.error(error);
-      this.ddrSpinnerService.hideSpinner();
-    })
-
+    this.courses = this.ddrConfigurationService.getData("data.courses");
   }
 
 }

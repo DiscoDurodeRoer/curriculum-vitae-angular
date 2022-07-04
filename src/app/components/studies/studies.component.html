@@ -1,60 +1,38 @@
-<div id="studies" class="row">
-  <div class="col-12 h-100">
 
-    <div class="row">
-      <div class="col-12">
-        <h1>Estudios</h1>
-        <table class="table table-striped  table-responsive">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Lugar</th>
-              <th>Titulo</th>
-              <th>Nota</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of studies">
-              <td>{{row.rango}}</td>
-              <td>{{row.lugar}}</td>
-              <td>{{row.titulo}}</td>
-              <td>{{row.nota}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-12">
-
-        <h1>Cursos</h1>
-        <table class="table table-striped table-responsive">
-          <thead>
-            <tr>
-              <th>Año</th>
-              <th>Curso</th>
-              <th>Lugar</th>
-              <th>Horas</th>
-              <th>Tipo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of courses">
-              <td>{{row.anio}}</td>
-              <td>{{row.nombre}}</td>
-              <td>{{row.lugar}}</td>
-              <td>{{row.horas}}</td>
-              <td>{{row.tipo}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
+<div class="row">
+  <div class="col-12">
+      <p-table
+          [value]="studies"
+          [rowHover]="true">
+      
+          <ng-template pTemplate="header">
+              <tr>
+                <th>{{'label.date' | translate}}</th>
+                <th>{{'label.place' | translate}}</th>
+                <th>{{'label.title' | translate}}</th>
+                <th>{{'label.note' | translate}}</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-st>
+              <tr class="p-selectable-row">
+                <td>
+                  <span class="font-weight-bold p-column-title">{{'label.date' | translate}}</span>
+                  {{st.range | translate}}
+                </td>
+                <td>
+                  <span class="font-weight-bold p-column-title">{{'label.place' | translate}}</span>
+                  <span class="p-column-value">{{st.place | translate}}</span>
+                </td>
+                <td>
+                  <span class="font-weight-bold p-column-title">{{'label.title' | translate}}</span>
+                  <span class="p-column-value">{{st.title | translate}}</span>
+                </td>
+                <td>
+                  <span class="font-weight-bold p-column-title">{{'label.note' | translate}}</span>
+                  {{st.note | translate}}
+                </td>
+              </tr>
+          </ng-template>
+      </p-table>
   </div>
-
-
-  <ddr-spinner></ddr-spinner>
-
 </div>

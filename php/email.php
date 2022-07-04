@@ -7,15 +7,20 @@ if(!isset($data)){
 }else{
 	
 	$json = json_decode($data, true);
-	$mensajeFinal = "Nombre: " . $json['name'] .  
-	                "\nCorreo: " . $json['email'] .  
-	                "\nMensaje:\n\n " . $json['mensaje'];
-	if(mail("administrador@discoduroderoer.es","Mensaje recibido", $mensajeFinal)):
-	    echo true;
-	else:
-	   echo false;
-	endif;
+	if(isset($json['name']) && isset($json['email']) && isset($json['message'])){
 
+		$mensajeFinal = "Nombre: " . $json['name'] .  
+						"\nCorreo: " . $json['company'] .  
+						"\nCorreo: " . $json['email'] .  
+						"\nMensaje:\n\n " . $json['message'];
+		if(mail("administrador@discoduroderoer.es","Mensaje recibido CV", $mensajeFinal)):
+			echo true;
+		else:
+		   echo false;
+		endif;
+	}else{
+		echo false;
+	}
 }
 
 ?>

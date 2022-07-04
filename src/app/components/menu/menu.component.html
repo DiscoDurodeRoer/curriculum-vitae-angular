@@ -1,0 +1,38 @@
+<div class="row no-gutters">
+  <div class="col-12 text-center">
+    <ul class="nav flex-column">
+      <li class="nav-item border-top" routerLinkActive="active" (click)="onClickItemMenu()">
+        <a class="nav-link" [ngClass]="{'border-menu': showBorder}" [routerLink]="['inicio']">{{'label.menu.home' | translate}}</a>
+      </li>
+      <li class="nav-item border-top" routerLinkActive="active" (click)="onClickItemMenu()">
+        <a class="nav-link" [ngClass]="{'border-menu': showBorder}" [routerLink]="['datos-personales']">{{'label.menu.personal' | translate}}</a>
+      </li>
+      <li *ngIf="showSkills" class="nav-item border-top" routerLinkActive="active" (click)="onClickItemMenu()">
+        <a class="nav-link" [ngClass]="{'border-menu': showBorder}" [routerLink]="['habilidades']">{{'label.menu.skills' | translate}}</a>
+      </li>
+      <li *ngIf="showContact" class="nav-item border-top" routerLinkActive="active" (click)="onClickItemMenu()">
+        <a class="nav-link" [ngClass]="{'border-menu': showBorder}" [routerLink]="['contacto']">{{'label.menu.contact' | translate}}</a>
+      </li>
+      <li *ngIf="showWorks" class="nav-item border-top" routerLinkActive="active" (click)="onClickItemMenu()">
+        <a class="nav-link" [ngClass]="{'border-menu': showBorder}" [routerLink]="['trabajos']">{{'label.menu.works' | translate}}</a>
+      </li>
+      <li *ngIf="showCourses" class="nav-item border-top" routerLinkActive="active" (click)="onClickItemMenu()">
+        <a class="nav-link" [ngClass]="{'border-menu': showBorder}" [routerLink]="['cursos']">{{'label.menu.courses' | translate}}</a>
+      </li>
+      <li *ngIf="showRepositories" class="nav-item border-top border-bottom" routerLinkActive="active" (click)="onClickItemMenu()">
+        <a class="nav-link" [ngClass]="{'border-menu': showBorder}" [routerLink]="['repositorios']">{{'label.menu.repositories' | translate}}</a>
+      </li>
+      <li class="nav-item mt-2 mb-2" (click)="downloadCV()">
+        <a class="btn btn-block border-0 btn-primary text-light">{{'label.menu.download.cv' | translate}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row no-gutters">
+  <div class="social-block col-2 mb-md-2" *ngFor="let sn of socialNetworks">
+    <a class="btn btn-block rounded-0 btn-social btn-{{sn.icon}}" href="{{sn.link}}" target="_blank">
+      <span [title]="sn.name" class="fa fa-{{sn.icon}}"></span>
+    </a>
+  </div>
+</div>

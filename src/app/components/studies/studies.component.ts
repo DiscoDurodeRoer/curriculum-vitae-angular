@@ -1,5 +1,5 @@
-import { DdrSpinnerService } from 'ddr-spinner';
-import { DdrConfigurationService } from 'ddr-configuration';
+import { Study } from './../../models/study';
+import { DdrConfigService } from 'ddr-library';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,24 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudiesComponent implements OnInit {
 
-  public studies: any[];
-  public courses: any[];
-  public load = false;
+  public studies: Study[];
 
   constructor(
-    private ddrConfigurationService: DdrConfigurationService,
-    private ddrSpinnerService: DdrSpinnerService) { }
+    private ddrConfigurationService: DdrConfigService
+  ) { }
 
   ngOnInit() {
-
-    this.ddrSpinnerService.showSpinner();
-
-    const data = this.ddrConfigurationService.getData("data");
-    this.studies = data.estudios;
-    this.courses = data.cursos;
-
-    this.ddrSpinnerService.hideSpinner();
-
+    this.studies = this.ddrConfigurationService.getData("data.studies");
   }
 
 }

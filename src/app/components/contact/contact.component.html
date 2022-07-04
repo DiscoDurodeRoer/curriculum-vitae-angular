@@ -1,58 +1,39 @@
 <div id="contact" class="col-12 h-100">
 
-    <div class="bg-light">
-
-        <div *ngIf="enviado && correcto" class="alert alert-success" role="alert">
-            ¡Mensaje enviado correctamente!
+    <div class="row">
+        <div class="col-md-6 col-12 mt-4">                
+            <google-map [options]="optionsMap" width="100%" height="600px">
+                <map-marker [position]="location.position"></map-marker>
+            </google-map>
         </div>
-
-        <div *ngIf="enviado && !correcto" class="alert alert-danger" role="alert">
-            Ha habido un error, pruebalo mas tarde.
-        </div>
-
-        <form #form="ngForm" class="form-horizontal" method="post" (ngSubmit)="sendEmail(form)">
-            <fieldset>
-
-                <legend class="text-center">
-                    <h1>Contacto</h1>
-                </legend>
+        
+        <div class="col-md-6 col-12">                
+            <form #form="ngForm" class="form-horizontal" method="post" (ngSubmit)="sendEmail(form)">
+                
                 <div class="controls">
-                    <label class="control-label" for="name">Nombre (*)</label>
-                    <input id="name" name="name" type="text" placeholder="Tu nombre" class="form-control" [(ngModel)]="dataForm.name"
+                    <label class="control-label" for="name">{{'label.name' | translate}} (*)</label>
+                    <input id="name" name="name" type="text" [placeholder]="'label.placeholder.name' | translate" class="form-control" [(ngModel)]="dataForm.name"
                         #name="ngModel" required>
 
-                    <div class="alert alert-danger message-error" role="alert" *ngIf="name.errors?.required && name.dirty">
-                        El nombre es obligatorio
-                    </div>
-
-                    <label class="control-label" for="email">Tu E-mail (*)</label>
-                    <input id="email" name="email" type="text" placeholder="Tu email" class="form-control" [(ngModel)]="dataForm.email"
+                    <label class="control-label" for="email">{{'label.email' | translate}} (*)</label>
+                    <input id="email" name="email" type="text" [placeholder]="'label.placeholder.email' | translate" class="form-control" [(ngModel)]="dataForm.email"
                         #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
 
-                    <div class="alert alert-danger message-error" role="alert" *ngIf="email.errors?.required && email.dirty">
-                        El email es obligatorio
-                    </div>
+                    <label class="control-label" for="company">{{'label.company' | translate}}</label>
+                    <input id="company" name="company" type="text" [placeholder]="'label.placeholder.company' | translate" class="form-control" [(ngModel)]="dataForm.company"
+                        #email="ngModel">
 
-                    <div class="alert alert-danger message-error" role="alert" *ngIf="email.errors?.pattern && email.dirty">
-                        El email no tiene el formato correcto
-                    </div>
+                    <label class=" control-label" for="message">{{'label.message' | translate}} (*)</label>
+                    <textarea id="message" class="form-control" name="message" [placeholder]="'label.placeholder.message' | translate" rows="10"
+                        [(ngModel)]="dataForm.message" #message="ngModel" required>
+                    </textarea>
 
-
-                    <label class=" control-label" for="message">Tu mensaje (*)</label>
-                    <textarea id="message" class="form-control" name="message" placeholder="Escribe tu mensaje..." rows="10"
-                        [(ngModel)]="dataForm.mensaje" #message="ngModel" required>
-                            </textarea>
-
-                    <div class="alert alert-danger message-error" role="alert" *ngIf="message.errors?.required && message.dirty">
-                        El mensaje es obligatorio
-                    </div>
-
-                    <button type="submit" [disabled]="form.invalid" class="col-md-12 btn btn-primary btn-lg">Enviar</button>
+                    <button type="submit" [disabled]="form.invalid" class="col-md-12 btn btn-primary btn-lg mb-4">{{'label.send.message' | translate}}</button>
 
                 </div>
-
-            </fieldset>
-        </form>
+    
+            </form>
+        </div>
     </div>
   
     <ddr-spinner></ddr-spinner>

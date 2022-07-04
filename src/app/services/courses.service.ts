@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DdrConfigurationService } from 'ddr-configuration';
+import { DdrConfigService } from 'ddr-library';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -13,7 +13,7 @@ export class CoursesService {
 
   constructor(
     private http: HttpClient,
-    private ddrConfigService: DdrConfigurationService) {
+    private ddrConfigService: DdrConfigService) {
     const config = this.ddrConfigService.getData("config");
     this.url = config.urlCoursesUdemy;
     this.token = config.tokenUdemy;

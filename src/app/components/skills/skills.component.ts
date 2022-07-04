@@ -1,7 +1,8 @@
-import { DdrSpinnerService } from 'ddr-spinner';
-import { DdrConfigurationService } from 'ddr-configuration';
+import { Skill } from './../../models/skill';
+import { DdrConfigService, DdrSpinnerService } from 'ddr-library';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { groupBy } from 'lodash';
 
 @Component({
   selector: 'app-skills',
@@ -10,12 +11,13 @@ import { Router } from '@angular/router';
 })
 export class SkillsComponent implements OnInit {
 
-  public skills: any[];
+  public skills: Skill[];
+  public skillsAll: Skill[];
   public load = false;
 
   constructor(
     private router: Router,
-    private ddrConfigurationService: DdrConfigurationService,
+    private ddrConfigurationService: DdrConfigService,
     private ddrSpinnerService: DdrSpinnerService
   ) { }
 
@@ -23,41 +25,17 @@ export class SkillsComponent implements OnInit {
 
 
     this.ddrSpinnerService.showSpinner();
-    const config = this.ddrConfigurationService.getData("config");
+    const showSkills = this.ddrConfigurationService.getData("config.showSkills");
 
-    if (!config.showSkills) {
+    if (!showSkills) {
       this.router.navigate(['/inicio']);
     }
 
-    const data = this.ddrConfigurationService.getData("data");
-    this.skills = data.habilidades;
-
-    for (let skill of this.skills) {
-      skill.class_color = this.chooseColor(skill);
-    }
-
+    this.skillsAll = this.ddrConfigurationService.getData("data.skills");
+    this.skills = groupBy(this.skillsAll, 'group');
+    
     this.ddrSpinnerService.hideSpinner();
 
-  }
-
-  chooseColor(skill: any) {
-
-    let class_color = { "color": '', "class_progress": '' };
-    if (skill.valor >= 80 && skill.valor <= 100) {
-      class_color.color = "green";
-      class_color.class_progress = "bg-success";
-    } else if (skill.valor >= 60 && skill.valor < 80) {
-      class_color.color = "blue";
-      class_color.class_progress = "bg-info";
-    } else if (skill.valor >= 40 && skill.valor < 60) {
-      class_color.color = "yellow";
-      class_color.class_progress = "bg-warning";
-    } else {
-      class_color.color = "red";
-      class_color.class_progress = "bg-danger";
-    }
-
-    return class_color;
   }
 
 

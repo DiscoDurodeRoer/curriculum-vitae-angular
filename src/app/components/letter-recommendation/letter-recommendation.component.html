@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12 mt-2 text-center" *ngFor="let lr of letterRecommendations | paginate: {itemsPerPage: 1, currentPage: page}">
+        <h2>{{lr.name}}</h2>
+        <img class="img-fluid" [src]="lr.urlImg">
+      </div>
+    </div>
+
+    <div class="row" *ngIf="letterRecommendations && letterRecommendations.length > 1">
+      <div class="col-12 text-center mb-5">
+        <div class="pagination-footer">
+          <pagination-controls 
+            [nextLabel]="'label.next' | translate" 
+            [previousLabel]="'label.previous' | translate" 
+            (pageChange)="page = $event">
+          </pagination-controls>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

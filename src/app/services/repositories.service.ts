@@ -1,4 +1,4 @@
-import { DdrConfigurationService } from 'ddr-configuration';
+import { DdrConfigService } from 'ddr-library';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -12,7 +12,7 @@ export class RepositoriesService {
 
   constructor(
     private http: HttpClient,
-    private ddrConfigService: DdrConfigurationService) {
+    private ddrConfigService: DdrConfigService) {
     const config = this.ddrConfigService.getData("config");
     this.url = config.urlGithubRepositories;
   }

@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-12">
+        <p-table
+            [value]="experience"
+            [rowHover]="true">
+        
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>{{'label.date' | translate}}</th>
+                    <th>{{'label.company' | translate}}</th>
+                    <th>{{'label.place' | translate}}</th>
+                    <th>{{'label.position' | translate}}</th>
+                    <th>{{'label.tasks' | translate}}</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-exp>
+                <tr class="p-selectable-row">
+                    <td *ngIf="exp.end">
+                        <span class="font-weight-bold p-column-title">{{'label.date' | translate}}</span>
+                        {{exp.start + ' - ' + exp.end}}
+                    </td>
+                    <td *ngIf="!exp.end">
+                        <span class="font-weight-bold p-column-title">{{'label.date' | translate}}</span>
+                        {{exp.start + ' - ' + ('label.currently' | translate)}}
+                    </td>
+                    <td>
+                        <span class="font-weight-bold p-column-title">{{'label.company' | translate}}</span>
+                        {{exp.company | translate}}
+                    </td>
+                    <td>
+                        <span class="font-weight-bold p-column-title">{{'label.place' | translate}}</span>
+                        {{exp.place | translate}}
+                    </td>
+                    <td>
+                        <span class="font-weight-bold p-column-title">{{'label.position' | translate}}</span>
+                        <span class="p-column-value">{{exp.position | translate}}</span>
+                    </td>
+                    <td>
+                        <span class="font-weight-bold p-column-title">{{'label.company' | translate}}</span>
+                        <span class="p-column-value">{{exp.description | translate}}</span>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+

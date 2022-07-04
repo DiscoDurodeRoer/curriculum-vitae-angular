@@ -1,8 +1,8 @@
 {
     "data": {
-        "img_profile": "./assets/img/fernando.jpg",
+        "imgProfile": "./assets/img/fernando.jpg",
         "name": "Fernando Ureña Gómez",
-        "social_networks": [
+        "socialNetworks": [
             {
                 "name": "Facebook",
                 "icon": "facebook",
@@ -34,215 +34,321 @@
                 "link": "https://github.com/DiscoDurodeRoer"
             }
         ],
-        "datos_personales": [
+        "personalData": [
             {
-                "column_display": "Nombre",
-                "column_value": "Fernando"
+                "columnDisplay": "label.name",
+                "columnValue": "Fernando"
             },
             {
-                "column_display": "Apellidos",
-                "column_value": "Ureña Gómez"
+                "columnDisplay": "label.surname",
+                "columnValue": "Ureña Gómez"
             },
             {
-                "column_display": "Fecha nacimiento",
-                "column_value": "05/02/1990"
+                "columnDisplay": "label.birthdate",
+                "columnValue": "05/02/1990"
             },
             {
-                "column_display": "Email",
-                "column_value": "fernando.ureña.gomez@gmail.com"
+                "columnDisplay": "label.email",
+                "columnValue": "fernando.ureña.gomez@gmail.com"
             },
             {
-                "column_display": "Nacionalidad",
-                "column_value": "Española"
+                "columnDisplay": "label.nationality",
+                "columnValue": "label.nationality.value"
             },
             {
-                "column_display": "Carnet conducir",
-                "column_value": "Tipo B"
+                "columnDisplay": "label.type.carnet",
+                "columnValue": "label.type.carnet.value"
             },
             {
-                "column_display": "Vehiculo propio",
-                "column_value": "Si"
+                "columnDisplay": "label.own.vehicule",
+                "columnValue": "label.yes"
             },
             {
-                "column_display": "Disponibilidad para viajar",
-                "column_value": "Si"
+                "columnDisplay": "label.availability.travel",
+                "columnValue": "label.yes"
             }
         ],
-        "estudios": [
+        "studies": [
             {
-                "rango": "2016-2017",
-                "lugar": "IES Maestre de Calatrava, Ciudad Real",
-                "titulo": "Técnico en desarrollo de aplicaciones web (e-learning)",
-                "nota": "9"
+                "range": "2016-2017",
+                "place": "IES Maestre de Calatrava, Ciudad Real",
+                "title": "Técnico en desarrollo de aplicaciones web (e-learning)",
+                "note": "9"
             },
             {
-                "rango": "2012-2014",
-                "lugar": "IES Maestre de Calatrava, Ciudad Real",
-                "titulo": "Técnico en desarrollo de aplicaciones multiplataforma",
-                "nota": "9.64"
+                "range": "2012-2014",
+                "place": "IES Maestre de Calatrava, Ciudad Real",
+                "title": "Técnico en desarrollo de aplicaciones multiplataforma",
+                "note": "9.64"
             },
             {
-                "rango": "2010-2012",
-                "lugar": "IES Maestre de Calatrava, Ciudad Real",
-                "titulo": "Técnico en Microsistemas Informáticos y Redes",
-                "nota": "9.31"
+                "range": "2010-2012",
+                "place": "IES Maestre de Calatrava, Ciudad Real",
+                "title": "Técnico en Microsistemas Informáticos y Redes",
+                "note": "9.31"
             }
         ],
-        "cursos": [
+        "courses": [
             {
-                "anio": "2018",
-                "nombre": "Lua Programming and Game Development with LÖVE",
-                "lugar": "Udemy",
-                "horas": "5.5",
-                "tipo": "Online"
+                "year": "2018",
+                "name": "Lua Programming and Game Development with LÖVE",
+                "place": "Udemy",
+                "hours": "5.5",
+                "type": "label.type.online"
             },
             {
-                "anio": "2018",
-                "nombre": "Bootstrap 4: El Curso Completo, Práctico y Desde Cero",
-                "lugar": "Udemy",
-                "horas": "19",
-                "tipo": "Online"
+                "year": "2018",
+                "name": "Bootstrap 4: El Curso Completo, Práctico y Desde Cero",
+                "place": "Udemy",
+                "hours": "19",
+                "type": "label.type.online"
             },
             {
-                "anio": "2012",
-                "nombre": "Community manager",
-                "lugar": "Universidad Deusto",
-                "horas": "300",
-                "tipo": "A distancia"
+                "year": "2012",
+                "name": "Community manager",
+                "place": "Universidad Deusto",
+                "hours": "300",
+                "type": "label.type.online"
             },
             {
-                "anio": "2011",
-                "nombre": "Cisco Information Technology Essentials: Hardware and Software",
-                "lugar": "IES Maestre de Calatrava",
-                "horas": "20",
-                "tipo": "Presencial"
+                "year": "2011",
+                "name": "Cisco Information Technology Essentials: Hardware and Software",
+                "place": "IES Maestre de Calatrava",
+                "hours": "20",
+                "type": "label.type.presential"
             },
             {
-                "anio": "2011",
-                "nombre": "Diseño de páginas web",
-                "lugar": "Universidad Deusto",
-                "horas": "250",
-                "tipo": "A distancia"
+                "year": "2011",
+                "name": "Diseño de páginas web",
+                "place": "Universidad Deusto",
+                "hours": "250",
+                "type": "label.type.online"
             }
         ],
-        "experiencias": [
+        "experience": [
             {
-                "rango": "Febrero 2021 - Actualidad",
-                "compania": "Moontech",
-                "posicion": "Programador Senior FullStack",
-                "descripcion": "Trabajando realizando aplicaciones del area de industria"
+                "start": "02/2021",
+                "end": null,
+                "company": "Moontech",
+                "place": "Zaragoza",
+                "position": "label.senior.fullstack",
+                "description": "label.moontech.description"
             },
             {
-                "rango": "Diciembre 2017 - Febrero 2021",
-                "compania": "Indra",
-                "posicion": "Programador Front-end",
-                "descripcion": "Trabajando realizando aplicaciones del area de Sanidad"
+                "start": "09/2018",
+                "end": null,
+                "company": "Udemy",
+                "place": "label.remote",
+                "position": "Instructor",
+                "description": "label.udemy.description"
             },
             {
-                "rango": "Julio 2016 – Septiembre 2016",
-                "compania": "Everis",
-                "posicion": "Soporte técnico",
-                "descripcion": "Contratado para suplir vacaciones, realizaba tareas de despliegue y de gestión de servidores"
+                "start": "02/2021",
+                "end": null,
+                "company": "Youtube",
+                "place": "label.remote",
+                "position": "Youtuber",
+                "description": "label.youtube.description"
             },
             {
-                "rango": "Abril 2015 - Diciembre 2017",
-                "compania": "Autonomo",
-                "posicion": "Freelance",
-                "descripcion": "Trabajo como freelance haciendo aplicaciones, creando y reparando webs en Fiverr"
+                "start": "12/2017",
+                "end": "02/2021",
+                "company": "Indra",
+                "place": "Ciudad Real",
+                "position": "label.front.end.programmer",
+                "description": "label.indra.description"
             },
             {
-                "rango": "Marzo 2014 - Junio 2014",
-                "compania": "Goodwebsite",
-                "posicion": "Programador en la empresa",
-                "descripcion": "Realizaba páginas web y aplicaciones a medida para clientes"
+                "start": "07/2016",
+                "end": "09/2016",
+                "company": "Everis",
+                "place": "Ciudad Real",
+                "position": "label.technical.support",
+                "description": "label.everis.description"
             },
             {
-                "rango": "Abril 2015 - Diciembre 2017",
-                "compania": "Autonomo",
-                "posicion": "Profesor particular",
-                "descripcion": "Doy clases particulares de programación en classgap"
+                "start": "04/2015",
+                "end": "12/2021",
+                "company": "label.freelance",
+                "place": "Ciudad Real",
+                "position": "label.tutor",
+                "description": "label.classgap.description"
             },
             {
-                "rango": "Marzo 2012 - Junio 2012",
-                "compania": "SEC",
-                "posicion": "Administrador de sistemas",
-                "descripcion": "Encargado de las redes y del mantenimiento y funcionamiento de los equipos de la empresa"
+                "start": "04/2015",
+                "end": "12/2017",
+                "company": "label.freelance",
+                "place": "Ciudad Real",
+                "position": "Freelance",
+                "description": "label.freelance.description"
+            },
+            {
+                "start": "03/2014",
+                "end": "06/2014",
+                "company": "Goodwebsite",
+                "place": "label.london",
+                "position": "label.programmer",
+                "description": "label.goodwebsite.description"
+            },
+            {
+                "start": "03/2012",
+                "end": "06/2012",
+                "company": "SEC",
+                "place": "Ciudad Real",
+                "position": "label.system administrator",
+                "description": "label.sec.description"
             }
         ],
-           "habilidades": [
+        "skills": [
             {
-                "nombre": "Java SE",
-                "valor": "90"
+                "name": "Java SE",
+                "years": "10",
+                "thumbnail": "assets/img/languages/Java.jpg",
+                "group": "desktop"
             },
             {
-                "nombre": "VB .Net",
-                "valor": "80"
+                "name": "Java FX",
+                "years": "4",
+                "thumbnail": "assets/img/languages/javafx.jpg",
+                "group": "desktop"
             },
             {
-                "nombre": "Angular",
-                "valor": "90"
+                "name": "VB .Net",
+                "years": "6",
+                "thumbnail": "assets/img/languages/Visual Basic .NET.jpg",
+                "group": "desktop"
             },
             {
-                "nombre": "Nest JS",
-                "valor": "70"
+                "name": "Javascript",
+                "years": "5",
+                "thumbnail": "assets/img/languages/JavaScript.jpg",
+                "group": "frontend"
             },
             {
-                "nombre": "Bootstrap 4",
-                "valor": "90"
+                "name": "Typescript",
+                "years": "5",
+                "thumbnail": "assets/img/languages/TypeScript.jpg",
+                "group": "frontend"
             },
             {
-                "nombre": "TypeORM",
-                "valor": "70"
+                "name": "Angular",
+                "years": "5",
+                "thumbnail": "assets/img/languages/Angular.jpg",
+                "group": "frontend"
             },
             {
-                "nombre": "Sequelize",
-                "valor": "80"
+                "name": "Nest JS",
+                "years": "2",
+                "thumbnail": "assets/img/languages/nestjs.png",
+                "group": "backend"
             },
             {
-                "nombre": "Python",
-                "valor": "60"
+                "name": "Bootstrap",
+                "years": "5",
+                "thumbnail": "assets/img/languages/bootstrap.jpg",
+                "group": "frontend"
             },
             {
-                "nombre": "PHP",
-                "valor": "50"
+                "name": "Lua",
+                "years": "3",
+                "thumbnail": "assets/img/languages/Lua.jpg",
+                "group": "scripting"
             },
             {
-                "nombre": "Android",
-                "valor": "30"
+                "name": "Python",
+                "years": "3",
+                "thumbnail": "assets/img/languages/Python.jpg",
+                "group": "scripting"
             },
             {
-                "nombre": "Wordpress",
-                "valor": "90"
+                "name": "PHP",
+                "years": "5",
+                "thumbnail": "assets/img/languages/PHP.jpg",
+                "group": "backend"
             },
             {
-                "nombre": "CSS",
-                "valor": "80"
+                "name": "Android",
+                "years": "2",
+                "thumbnail": "assets/img/languages/android.jpg",
+                "group": "mobile"
             },
             {
-                "nombre": "C#",
-                "valor": "40"
+                "name": "Wordpress",
+                "years": "7",
+                "thumbnail": "assets/img/languages/wordpress.jpg",
+                "group": "cms"
             },
             {
-                "nombre": "Prestashop",
-                "valor": "70"
+                "name": "HTML",
+                "years": "8",
+                "thumbnail": "assets/img/languages/HTML.jpg",
+                "group": "frontend"
             },
             {
-                "nombre": "MySQL",
-                "valor": "70"
+                "name": "CSS",
+                "years": "8",
+                "thumbnail": "assets/img/languages/CSS.jpg",
+                "group": "frontend"
             },
             {
-                "nombre": "Oracle",
-                "valor": "60"
+                "name": "C#",
+                "years": "4",
+                "thumbnail": "assets/img/languages/C-sharp.jpg",
+                "group": "desktop"
             },
             {
-                "nombre": "Javascript",
-                "valor": "80"
+                "name": "Prestashop",
+                "years": "2",
+                "thumbnail": "assets/img/languages/prestashop.jpg",
+                "group": "cms"
             },
             {
-                "nombre": "Magento",
-                "valor": "30"
+                "name": "MySQL",
+                "years": "6",
+                "thumbnail": "assets/img/languages/mysql.jpg",
+                "group": "database"
+            },
+            {
+                "name": "Oracle",
+                "years": "6",
+                "thumbnail": "assets/img/languages/oracle.jpg",
+                "group": "database"
+            },
+            {
+                "name": "Magento",
+                "years": "1",
+                "thumbnail": "assets/img/languages/magento.jpg",
+                "group": "cms"
+            },
+            {
+                "name": "IONIC",
+                "years": "5",
+                "thumbnail": "assets/img/languages/ionic.png",
+                "group": "mobile"
             }
-        ]
+        ],
+        "languages": [
+            {
+                "name": "label.spanish",
+                "level": "label.native"
+            },
+            {
+                "name": "label.english",
+                "level": "B2"
+            }
+        ],
+        "letterRecommendations": [
+            {
+                "name": "Indra",
+                "urlImg": "assets/img/letter-recommendation/indra.jpg"
+            }
+        ],
+        "location": {
+            "position": {
+              "lat": 41.65641460654274,
+              "lng": -0.8785756534658123
+            }
+        }
     },
     "config": {
         "webUrl": "https://www.discoduroderoer.es",
@@ -254,7 +360,8 @@
         "showWorks": true,
         "showCourses": true,
         "showRepositories": true,
-        "urlGithubRepositories": "https://api.github.com/users/discoduroderoer/repos",
+        "filenameCV": "CV-Fernando-Urena-Gomez.pdf",
+        "urlGithubRepositories": "https://api.github.com/users/discoduroderoer/repos?per_page=100",
         "urlCoursesUdemy": "https://www.udemy.com/instructor-api/v1/taught-courses/courses/",
         "tokenUdemy": "8lb0v4ullQ8pU6ZQj8zyeHfyu2oxextO"
     }

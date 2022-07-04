@@ -1,5 +1,8 @@
-import { DdrConfigurationService } from 'ddr-configuration';
-import { Component, OnInit } from '@angular/core';
+import { DdrCacheService } from './../../services/ddr-cache.service';
+
+import { DdrConfigService, DdrConstantsService, DdrResolutionService } from 'ddr-library';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'sidebar',
@@ -8,21 +11,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  public social_networks = [];
   public img_profile: string;
   public name: string;
 
   constructor(
-    private ddrConfigurationService: DdrConfigurationService
-  ) { }
+    private ddrConfigurationService: DdrConfigService,
+    public ddrResolution: DdrResolutionService,
+    public ddrConstants: DdrConstantsService,
+    private ddrCache: DdrCacheService
+  ) { 
+
+  }
 
   ngOnInit() {
 
     const data = this.ddrConfigurationService.getData("data");
-    this.name = data.name;
-    this.social_networks = data.social_networks;
-    this.img_profile = data.img_profile;
+    this.name = this.ddrConfigurationService.getData("data.name");
+    this.img_profile = this.ddrConfigurationService.getData("data.imgProfile");
 
+  }
+
+  openMenu(){
+    this.ddrCache.setElement('showDetail', true);
   }
 
 }

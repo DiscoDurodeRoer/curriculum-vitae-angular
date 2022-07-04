@@ -1,6 +1,6 @@
 <div id="works" class="col-12 h-100">
   <div *ngIf="posts && posts.length == 0">
-    No hay trabajos para mostrar
+    {{'label.no.works' | translate}}
   </div>
 
   <ng-container *ngIf="posts && posts.length > 0">
@@ -10,13 +10,13 @@
         *ngFor="let post of posts | paginate: {itemsPerPage: itemsPerPage, currentPage: page}">
 
         <div class="card h-100">
-          <img class="card-image-top w-100 img-fluid" [src]="post.thumbnail" />
+          <img class="card-image-top w-100 img-fluid" [src]="post.thumbnail_images?.full?.url" />
           <div class="card-body">
             <h3 class="card-title">{{post.title}}</h3>
             <p class="card-text" [innerHTML]="post.excerpt"></p>
           </div>
           <div class="card-footer">
-            <a class="btn btn-block btn-primary" role="button" [href]="post.url" target="_blank">Ir al post</a>
+            <a class="btn btn-block btn-primary" role="button" [href]="post.url" target="_blank">{{'label.go.to.post' | translate}}</a>
           </div>
         </div>
       </div>
@@ -26,7 +26,10 @@
     <div class="row" *ngIf="posts.length > itemsPerPage">
       <div class="col-12 text-center mb-5">
         <div class="pagination-footer">
-          <pagination-controls nextLabel="Siguiente" previousLabel="Anterior" (pageChange)="page = $event">
+          <pagination-controls 
+            [nextLabel]="'label.next' | translate" 
+            [previousLabel]="'label.previous' | translate" 
+            (pageChange)="page = $event">
           </pagination-controls>
         </div>
       </div>

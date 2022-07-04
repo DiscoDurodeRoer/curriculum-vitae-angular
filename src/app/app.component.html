@@ -1,18 +1,25 @@
-<div class="container-fluid p-0 h-100">
+<div class="container-fluid p-0 h-100 theme-default" ddrResolution>
   <div class="row no-gutters h-100">
-    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+    <div class="col-lg-2 col-md-2 col-sm-12 col-12">
         <sidebar></sidebar>
     </div>
-    <div class="col-lg-9 col-md-9 col-sm-12 col-12 h-100 panel-left">
+    <div class="col-lg-10 col-md-10 col-sm-12 col-12 h-100 panel-left">
       <div class="row no-gutters h-100">
-        <div class="col-12">
-          <header-comp></header-comp>
-        </div>
         <div class="content col-12">
           <router-outlet></router-outlet>
         </div>
       </div>
     </div>
   </div>
+
+  <ddr-detail *ngIf=" ddrCache.getElement('showDetail')" (close)="closeDetail()">
+
+    <h5 class="text-center pt-3" detail-title>{{name}}</h5>
+
+    <app-menu [showBorder]="false" (clickItemMenu)="closeDetail()" detail-content></app-menu>
+  
+  </ddr-detail>
 </div>
+
+<ddr-toast></ddr-toast>
 

@@ -1,20 +1,22 @@
-<div id="sidebar" class="pt-3">
-  <div class="row">
-    <div class="col-md-12 col-6 text-center">
-      <img class="img-fluid rounded-circle" [src]="img_profile">
+<div id="sidebar" class="pt-3" [ngClass]="{'pt-3': ddrResolution.size !== ddrConstants.DdrResolutionConstants.MOBILE, 'pt-1': ddrResolution.size === ddrConstants.DdrResolutionConstants.MOBILE}">
+  <div class="row no-gutters">
+    <div class="col-md-12 col-2 text-center">
+      <img class="profile img-fluid rounded-circle" [src]="img_profile" [ngClass]="{'pt-1': ddrResolution.size === ddrConstants.DdrResolutionConstants.MOBILE}">
     </div>
-    <div class="col-md-12 col-6">
-      <h1>Curriculum vitae</h1>
-      <h2>{{name}}</h2>
-    </div>
+    <ng-container *ngIf="ddrResolution.size !== ddrConstants.DdrResolutionConstants.MOBILE">
+      <div class="col-md-12 col-10 text-center mt-1 mb-1">
+        <span class="name text-light">{{name}}</span>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="ddrResolution.size === ddrConstants.DdrResolutionConstants.MOBILE">
+      <div class="col-8 text-left pt-2">
+        <span class="name text-light">{{name}}</span>
+      </div>  
+      <div class="col-2 text-center icon-mobile">
+        <i class="text-light fa fa-bars" aria-hidden="true" (click)="openMenu()"></i>
+      </div>
+    </ng-container>
   </div>
 
-  <div class="row">
-    <div class="social-block col-md-12 col-6 mb-md-2" *ngFor="let sn of social_networks">
-      <a class="btn btn-block rounded-0 btn-social btn-{{sn.icon}}" href="{{sn.link}}" target="_blank">
-        <span class="fa fa-{{sn.icon}}"></span> {{sn.name}}
-      </a>
-    </div>
-
-  </div>
+  <app-menu *ngIf="ddrResolution.size !== ddrConstants.DdrResolutionConstants.MOBILE"></app-menu>
 </div>

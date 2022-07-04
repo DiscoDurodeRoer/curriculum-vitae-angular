@@ -39,7 +39,7 @@ export class TranslateService {
    * @param phrase frase a traducir
    */
   public getTranslate(phrase: string) {
-    return this._data[phrase];
+    return this._data[phrase] ? this._data[phrase] : phrase;
   }
 
 
