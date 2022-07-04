@@ -2,7 +2,7 @@
 
 La finalidad de este proyecto, es proporcionar una aplicación web realizada en Angular, para crear tu propio curriculum vitae ligero y personalizable en cuanto a datos.
 
-Actualmente, se encuentra en la versión 7 de Angular.
+Actualmente, se encuentra en la versión 14 de Angular.
 
 # Instalación en local
 
