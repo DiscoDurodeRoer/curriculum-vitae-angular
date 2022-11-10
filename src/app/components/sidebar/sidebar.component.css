@@ -19,9 +19,16 @@
         height: 40px;
     }
 }
-@media (min-width: 576px) {
+@media (min-width: 576px) and (orientation: portrait) {
     .profile {
         width: 140px;
         height: 140px;
+    }
+}
+
+@media (min-width: 576px) and (orientation: landscape) {
+    .profile {
+        width: 55px;
+        height: 55px;
     }
 }
