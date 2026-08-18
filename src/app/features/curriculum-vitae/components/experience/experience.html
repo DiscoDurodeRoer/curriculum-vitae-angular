@@ -1,0 +1,85 @@
+<section>
+    <ddr-card>
+        <h4 card-title>{{'experience' | ddrTranslate}}</h4>
+        <div card-content>
+            @for(experience of experienceData(); track experience.company; let first = $first){
+
+                @let title = `${experience.company} · ${experience.start | date: 'MMMM yyyy':undefined:locale() | titlecase } - ${experience.end ? (experience.end | date: 'MMMM yyyy':undefined:locale() | titlecase ) : ('present' | ddrTranslate)}`;
+
+                <article>
+                    <ddr-accordion 
+                        [titleAccordion]="title"
+                        [open]="first"
+                        [shadow]="false" 
+                        [border]="false"
+                        [slim]="true">
+                        <div content-accordion>
+                            <div class="row mt-2 mb-2">
+                                <div class="col-12">
+                                    <h5>{{experience.jobTitle | ddrTranslate}} · {{experience.location | ddrTranslate}}, {{experience.country | ddrTranslate}} · {{experience.type | ddrTranslate}}</h5>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul>
+                                        @for(bullet of experience.bullets; track bullet){
+                                            <li>{{bullet | ddrTranslate}}</li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                            @if(experience.recomendationLetter){
+                                <ddr-button 
+                                    [text]="'see.recommendation.letter' | ddrTranslate"
+                                    icon="bi bi-eye"
+                                    (action)="openModalRecomendationLetter(experience)"/>
+                            }
+                            <hr />
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <span class="d-block h5 mb-3 mt-2">{{'technologies' | ddrTranslate}}</span>
+                                    @for(technology of experience.technologies; track technology){
+                                        <app-badge-tech [technology]="technology" />
+                                    }
+                                </div>
+                            </div>
+                            @if(experience.methodologies.length){
+                                <div class="row mb-2">
+                                    <div class="col-12">
+                                        <h5 class="mb-3 mt-2">{{'methodologies' | ddrTranslate}}</h5>
+                                        @for(methodology of experience.methodologies; track methodology){
+                                            <ddr-badge-pill 
+                                                [text]="methodology | ddrTranslate"
+                                                [canClick]="false" />
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </ddr-accordion>
+                </article>
+                
+            }
+        </div>
+    </ddr-card>
+</section>
+
+
+<ddr-modal 
+    [id]="ID_MODAL()" 
+    [labelConfirm]="'close' | ddrTranslate"
+    type="info"
+    size="large" >
+
+    <span modal-content>
+        @if(pathRecomendationLetter()){
+             <iframe
+                [src]="pathRecomendationLetter() | ddrSafe:'resourceUrl'"
+                width="100%"
+                height="98%"
+                style="border: none;">
+            </iframe>
+        }
+    </span>
+</ddr-modal>

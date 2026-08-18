@@ -1,0 +1,27 @@
+#content {
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+
+    ddr-card.header {
+
+        .ddr-card__body>div {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+
+        ddr-dropdown {
+            input {
+                max-width: 80px;
+            }
+        }
+
+    }
+
+
+
+    @media (max-width: 1399.98px) {
+        padding-top: 0;
+    }
+
+}

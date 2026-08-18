@@ -1,0 +1,49 @@
+<main id="content" class="row g-0">
+    <div class="col-12">
+
+        <div class="row">
+            <div class="col-xl-7 col-md-9 col-sm-10 col-12 m-auto mt-0 mb-0">
+                <ddr-card class="header" [showHeader]="false">
+                    <div card-content>
+                        
+                        <div class="row">
+                            <div class="col-12 p-0 d-flex align-content-stretch justify-content-center align-items-center">
+
+                                <ddr-dropdown
+                                    class="me-lg-5 ms-md-3 me-md-3"
+                                    [options]="languages()"
+                                    [ariaLabel]="'aria.language' | ddrTranslate"
+                                    name="language-switch"
+                                    size="small"
+                                    [showFilter]="false"
+                                    [value]="currentLanguage()"
+                                    (selectItem)="changeLanguage($event)" />
+
+                                <i class="bi bi-sun ms-2 me-2" [class.text-light]="isDarkTheme()"></i>
+                                <ddr-toggle 
+                                    size="small"
+                                    [ariaLabel]="'aria.theme' | ddrTranslate"
+                                    (toggled)="changeTheme($event)" />
+
+                                <i class="bi bi-moon ms-2 me-2" [class.text-light]="isDarkTheme()"></i>
+                                <ddr-button 
+                                    class="ms-lg-5 ms-md-3 me-md-3"
+                                    [text]="'download.cv' | ddrTranslate"
+                                    size="small"
+                                    (action)="downloadCV()" />
+                            
+                            </div>
+                        </div>
+
+
+                    </div>
+                </ddr-card>
+            </div>
+        </div>
+
+ 
+
+        <router-outlet />
+        
+    </div>
+</main>

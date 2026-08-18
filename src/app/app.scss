@@ -1,0 +1,13 @@
+@media (max-width: 1399.98px) {
+    #main-container {
+        max-height: 100%;
+        overflow-y: auto;
+    }
+}
+
+@media (min-width: 1399.98px) {
+    #content-container {
+        max-height: 100%;
+        overflow-y: auto;
+    }
+}

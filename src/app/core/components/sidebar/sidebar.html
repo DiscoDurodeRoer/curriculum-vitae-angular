@@ -1,0 +1,88 @@
+<aside id="sidebar" class="row">
+    <div class="col-12">
+        <ddr-card class="w-100 d-inline-block" [showHeader]="false">
+            <div card-content>
+
+                <div class="row">
+                    <div class="col-xxl-12 col-sm-6 col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <img 
+                                    class="d-block img-fluid m-auto rounded-circle border" 
+                                    ngSrc="/img/me.webp"
+                                    width="200"
+                                    height="200"
+                                    alt="Foto perfil Fernando Ureña Gómez" 
+                                    priority />
+                            </div>
+                            <div class="col-12 text-center">
+                                <div class="row mt-xl-3 mt-lg-4 mt-3">
+                                    <div class="col-12">
+                                        <h1>Fernando Ureña Gómez</h1>
+                                    </div>
+                                </div>
+                                <div class="row mt-xl-3 mt-lg-4 mt-3">
+                                    <div class="col-12">
+                                        <h2>{{'job.title' | ddrTranslate}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 mb-4">
+                            <div class="col-4 text-end">
+                                <a class="linkedin" href="https://www.linkedin.com/in/fernando-ure%C3%B1a-gomez-07b04049/"
+                                    target="_blank"
+                                    [attr.aria-label]="'aria.linkedin' | ddrTranslate">
+                                    <i class="bi bi-linkedin fs-1"  aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="col-4 text-center">
+                                <a class="email" href="mailto:fernando.urena.gomez@gmail.com" target="_blank" [attr.aria-label]="'aria.linkedin' | ddrTranslate">
+                                    <i class="bi bi-envelope fs-1" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="col-4 text-start">
+                                <a class="whatsapp" href="https://web.whatsapp.com/send?phone=34711255631" target="_blank" [attr.aria-label]="'aria.whatsapp' | ddrTranslate">
+                                    <i class="bi bi-whatsapp fs-1" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-12 col-sm-6 col-12 d-flex flex-column justify-content-end">
+                       
+                        <div class="row mb-2">
+                            <div class="col-12">
+                                <h5 class="ms-1">{{'main.stack' | ddrTranslate}}</h5>
+                                <app-badge-tech technology="Angular" />
+                                <app-badge-tech technology="Ionic" />
+                                <app-badge-tech technology="Spring Boot" />
+                                <app-badge-tech technology="NestJS" />
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-12">
+                                <h5 class="ms-1">{{'soft.skills' | ddrTranslate}}</h5>
+                                <ddr-badge-pill [text]="'communication' | ddrTranslate" [canClick]="false" />
+                                <ddr-badge-pill [text]="'teamwork' | ddrTranslate" [canClick]="false" />
+                                <ddr-badge-pill [text]="'problem.solving' | ddrTranslate" [canClick]="false" />
+                                <ddr-badge-pill [text]="'mentoring' | ddrTranslate" [canClick]="false" />
+                            </div>
+                        </div>
+
+                        <div class="row mt-4 mb-4">
+                            <div class="col-6 text-start">
+                                <h5 class="ms-1">{{'spanish' | ddrTranslate}} · {{'native' | ddrTranslate}}</h5>
+                            </div>
+                            <div class="col-6 text-start">
+                                <h5 class="ms-1">{{'english' | ddrTranslate}} · {{'professional' | ddrTranslate}}</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </ddr-card>
+    </div>
+</aside>

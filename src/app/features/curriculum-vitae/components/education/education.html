@@ -1,0 +1,27 @@
+<section>
+    <ddr-card>
+        <h4 card-title>{{'education' | ddrTranslate}}</h4>
+        <div card-content>
+            @for(education of educationData(); track education.title){
+
+                @let title = `${education.title | ddrTranslate} · ${education.start | date: 'MMMM yyyy':undefined:locale() | titlecase } - ${education.end ? (education.end | date: 'MMMM yyyy':undefined:locale() | titlecase ) : ('present' | ddrTranslate)}`; 
+
+                <article>
+                    <ddr-card
+                        [border]="false"
+                        [shadow]="false">
+                        <h5 card-title>{{title}}</h5>
+                        <div card-content>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>{{education.center | ddrTranslate}}{{education.city ? ', ' + education.city : ''}}{{education.country ? ', ' + education.country : ''}}</span>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                    </ddr-card>
+                </article>
+            }
+        </div>
+    </ddr-card>
+</section>

@@ -1,0 +1,15 @@
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background:
+        linear-gradient(135deg, #0000 20.5%, #8d8d8d 0 29.5%, #0000 0) 0 7px,
+        linear-gradient(45deg, #0000 8%, #8d8d8d 0 17%, #0000 0 58%) 14px 0,
+        linear-gradient(135deg, #0000 8%, #8d8d8d 0 17%, #0000 0 58%, #8d8d8d 0 67%, #0000 0),
+        linear-gradient(45deg, #0000 8%, #8d8d8d 0 17%, #0000 0 58%, #8d8d8d 0 67%, #0000 0 83%, #8d8d8d 0 92%, #0000 0),
+        #505050;
+    background-size: 28px 28px
+}
