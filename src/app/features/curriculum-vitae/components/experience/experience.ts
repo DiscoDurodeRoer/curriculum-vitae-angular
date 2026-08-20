@@ -3,9 +3,6 @@ import {
   Component,
   effect,
   inject,
-  input,
-  InputSignal,
-  Signal,
   signal,
   ViewEncapsulation,
   WritableSignal
@@ -15,10 +12,10 @@ import { DdrCardComponent } from 'ddr-ng/components/card';
 import { DdrTranslatePipe, DdrTranslateService } from 'ddr-ng/translate';
 import { ExperienceData } from '../../models/experience-data.model';
 import { BadgeTech } from '../../../../shared/components/badge-tech/badge-tech';
-import { DdrModalComponent, DdrModalService } from 'ddr-ng/modal';
 import { DdrButtonComponent } from 'ddr-ng/components/button';
-import { DdrSafePipe } from 'ddr-ng/pipes/safe';
 import { DdrBadgePillComponent } from 'ddr-ng/components/badge-pill';
+import { PdfViewerManager } from '../../../../shared/components/pdf-viewer/services/pdf-viewer-manager';
+import { pathFolderRecommendations } from '../../curriculum-vitae.constants';
 
 @Component({
   selector: 'app-experience',
@@ -26,9 +23,7 @@ import { DdrBadgePillComponent } from 'ddr-ng/components/badge-pill';
     DdrCardComponent,
     DdrAccordionComponent,
     DdrBadgePillComponent,
-    DdrModalComponent,
     DdrButtonComponent,
-    DdrSafePipe,
     DdrTranslatePipe,
     DatePipe,
     TitleCasePipe,
@@ -36,20 +31,14 @@ import { DdrBadgePillComponent } from 'ddr-ng/components/badge-pill';
   ],
   templateUrl: './experience.html',
   styleUrl: './experience.scss',
-  providers: [
-    DdrModalService
-  ],
   encapsulation: ViewEncapsulation.None
 })
 export class Experience {
 
-  private modalService: DdrModalService = inject(DdrModalService)
   private ddrTranslateService: DdrTranslateService = inject(DdrTranslateService)
-
-  public readonly ID_MODAL: Signal<string> = signal<string>('modal-recomendation-letter')
+  private pdfViewerManager: PdfViewerManager = inject(PdfViewerManager)
 
   public locale: WritableSignal<string> = signal<string>('');
-  public pathRecomendationLetter: WritableSignal<string | null> = signal<string | null>(null);
 
   public experienceData: WritableSignal<ExperienceData[]> = signal<ExperienceData[]>([
     {
@@ -59,7 +48,6 @@ export class Experience {
       location: 'saragossa',
       country: 'spain',
       type: 'remote',
-      recomendationLetter: false,
       bullets: [
         "accenture.bullet.1",
         "accenture.bullet.2",
@@ -95,7 +83,6 @@ export class Experience {
       location: 'Madrid',
       country: 'spain',
       type: 'remote',
-      recomendationLetter: false,
       bullets: [
         'mainjobs.bullet.1',
         'mainjobs.bullet.2',
@@ -118,7 +105,6 @@ export class Experience {
       location: 'Madrid',
       country: 'spain',
       type: 'hibrid',
-      recomendationLetter: false,
       bullets: [
         'evolutio.bullet.1',
         'evolutio.bullet.2',
@@ -153,7 +139,7 @@ export class Experience {
       location: 'Zaragoza',
       country: 'spain',
       type: 'presential',
-      recomendationLetter: true,
+      url: `${pathFolderRecommendations}/Moontech.pdf`,
       bullets: [
         'moontech.bullet.1',
         'moontech.bullet.2',
@@ -189,7 +175,7 @@ export class Experience {
       location: 'Ciudad Real',
       country: 'spain',
       type: 'presential',
-      recomendationLetter: true,
+      url: `${pathFolderRecommendations}/Indra.pdf`,
       bullets: [
         'indra.bullet.1',
         'indra.bullet.2',
@@ -218,9 +204,8 @@ export class Experience {
     effect(() => this.locale.set(this.ddrTranslateService.currentLanguage()!))
   }
 
-  openModalRecomendationLetter(experience: ExperienceData) {
-    this.pathRecomendationLetter.set(`/recommendations/${experience.company}.pdf`)
-    this.modalService.open(this.ID_MODAL());
+  viewRecomendationLetter(url: string) {
+    this.pdfViewerManager.open(url);
   }
 
 }

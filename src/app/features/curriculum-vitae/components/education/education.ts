@@ -3,11 +3,15 @@ import { DdrCardComponent } from 'ddr-ng/components/card';
 import { DdrTranslatePipe, DdrTranslateService } from 'ddr-ng/translate';
 import { EducationData } from '../../models/education-data.model';
 import { DatePipe, TitleCasePipe } from '@angular/common';
+import { PdfViewerManager } from '../../../../shared/components/pdf-viewer/services/pdf-viewer-manager';
+import { DdrButtonComponent } from 'ddr-ng/components/button';
+import { pathFolderDiplomas } from '../../curriculum-vitae.constants';
 
 @Component({
   selector: 'app-education',
   imports: [
     DdrCardComponent,
+    DdrButtonComponent,
     DdrTranslatePipe,
     DatePipe,
     TitleCasePipe
@@ -17,7 +21,8 @@ import { DatePipe, TitleCasePipe } from '@angular/common';
 })
 export class Education {
 
-  private ddrTranslateService: DdrTranslateService = inject(DdrTranslateService)
+  private ddrTranslateService: DdrTranslateService = inject(DdrTranslateService);
+  private pdfViewerManager: PdfViewerManager = inject(PdfViewerManager);
 
   public locale: WritableSignal<string> = signal<string>('');
 
@@ -36,7 +41,8 @@ export class Education {
       end: '2014-06',
       center: 'IES Maestre de Calatrava',
       city: 'Ciudad Real',
-      country: 'Spain'
+      country: 'Spain',
+      url: `${pathFolderDiplomas}/dam.pdf`
     },
     {
       title: 'smr',
@@ -50,6 +56,10 @@ export class Education {
 
   constructor() {
     effect(() => this.locale.set(this.ddrTranslateService.currentLanguage()!))
+  }
+
+  viewDiploma(url: string) {
+    this.pdfViewerManager.open(url);
   }
 
 }

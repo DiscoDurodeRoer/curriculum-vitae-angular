@@ -6,11 +6,12 @@ import { DdrToggleComponent } from 'ddr-ng/components/toggle';
 import { DdrTranslatePipe, DdrTranslateService } from 'ddr-ng/translate';
 import { DdrTheme } from 'ddr-ng/types';
 import { RouterOutlet } from '@angular/router';
-import { DdrSelectItem } from 'ddr-ng';
 import { DdrDropdownComponent } from 'ddr-ng/components/dropdown';
 import { DdrCardComponent } from 'ddr-ng/components/card';
 import { Meta } from '@angular/platform-browser';
 import { GoogleAnalytics } from '../../services/google-analytics';
+import { pathFolderCV } from '../../../features/curriculum-vitae/curriculum-vitae.constants';
+import { DdrSelectItem } from 'ddr-ng/models';
 
 @Component({
   selector: 'app-content',
@@ -49,8 +50,8 @@ export class Content {
 
   downloadCV() {
     this.download.downloadFile(
-      `/pdf/cv-${this.currentLanguage()}.pdf`,
-      'CV_Fernando_Urena_Gomez.pdf'
+      `${pathFolderCV}/cv-${this.currentLanguage()}.pdf`,
+      `CV_Fernando_Urena_Gomez_${this.currentLanguage()?.toUpperCase()}.pdf`
     ).subscribe({
       next: () => this.analytics.trackCVDownload(`cv-${this.currentLanguage()}.pdf`)
     });

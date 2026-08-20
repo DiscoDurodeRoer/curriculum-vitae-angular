@@ -7,7 +7,7 @@ export interface ExperienceData {
     country: string
     type: 'remote' | 'hibrid' | 'presential'
     bullets: string[]
-    recomendationLetter?: boolean
+    url?: string
     technologies: string[]
     methodologies: string[]
 }

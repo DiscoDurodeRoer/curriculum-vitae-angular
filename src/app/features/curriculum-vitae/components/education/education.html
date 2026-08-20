@@ -4,19 +4,35 @@
         <div card-content>
             @for(education of educationData(); track education.title){
 
-                @let title = `${education.title | ddrTranslate} · ${education.start | date: 'MMMM yyyy':undefined:locale() | titlecase } - ${education.end ? (education.end | date: 'MMMM yyyy':undefined:locale() | titlecase ) : ('present' | ddrTranslate)}`; 
-
                 <article>
                     <ddr-card
                         [border]="false"
                         [shadow]="false">
-                        <h5 card-title>{{title}}</h5>
+                        <h5 card-title>
+                            <span>{{education.title | ddrTranslate}}</span> · <time [attr.datetime]="education.start | date: 'MM yyyy':undefined:locale() | titlecase">{{education.start | date: 'MMMM yyyy':undefined:locale() | titlecase}}</time> - 
+                            @if(education.end){
+                                <time [attr.datetime]="education.end | date: 'MM yyyy':undefined:locale() | titlecase">{{education.end | date: 'MMMM yyyy':undefined:locale() | titlecase}}</time>
+                            }@else{
+                                <span>{{'present' | ddrTranslate}}</span>
+                            }
+                        </h5>
                         <div card-content>
                             <div class="row">
                                 <div class="col-12">
                                     <span>{{education.center | ddrTranslate}}{{education.city ? ', ' + education.city : ''}}{{education.country ? ', ' + education.country : ''}}</span>
                                 </div>
                             </div>
+                            @if(education.url){
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <ddr-button 
+                                            [text]="'view.diploma' | ddrTranslate"
+                                            size="medium"
+                                            icon="bi bi-eye"
+                                            (action)="viewDiploma(education.url)"/>
+                                    </div>
+                                </div>
+                            }
                             <hr />
                         </div>
                     </ddr-card>

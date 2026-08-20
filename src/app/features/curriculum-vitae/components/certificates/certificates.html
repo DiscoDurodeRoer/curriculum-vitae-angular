@@ -1,0 +1,31 @@
+<section>
+    <ddr-card>
+        <h4 card-title>{{'certificates' | ddrTranslate}}</h4>
+        <div card-content>
+            @for(certificate of certificatesData(); track certificate.title){
+
+                <article>
+                    <ddr-card
+                        [border]="false"
+                        [shadow]="false">
+                        <h5 card-title>
+                            <span>{{certificate.title | ddrTranslate}}</span> · <span>{{certificate.center}}</span> · <time [attr.datetime]="certificate.date | date: 'MM yyyy':undefined:locale() | titlecase">{{certificate.date | date: 'MMMM yyyy':undefined:locale() | titlecase}}</time>
+                        </h5>
+                        
+                        <div card-content>
+                            @if(certificate.url){
+                                <ddr-button 
+                                    [text]="'view.certificate' | ddrTranslate"
+                                    size="medium"
+                                    icon="bi bi-eye"
+                                    (action)="viewCertificate(certificate.url)"/>
+                            }
+                            <hr />
+                        </div>
+                    </ddr-card>
+                </article>
+            }
+        </div>
+    </ddr-card>
+</section>
+

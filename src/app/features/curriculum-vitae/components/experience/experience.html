@@ -29,11 +29,12 @@
                                     </ul>
                                 </div>
                             </div>
-                            @if(experience.recomendationLetter){
+                            @if(experience.url){
                                 <ddr-button 
-                                    [text]="'see.recommendation.letter' | ddrTranslate"
+                                    [text]="'view.recommendation.letter' | ddrTranslate"
                                     icon="bi bi-eye"
-                                    (action)="openModalRecomendationLetter(experience)"/>
+                                    size="medium"
+                                    (action)="viewRecomendationLetter(experience.url)"/>
                             }
                             <hr />
                             <div class="row mb-2">
@@ -64,22 +65,3 @@
         </div>
     </ddr-card>
 </section>
-
-
-<ddr-modal 
-    [id]="ID_MODAL()" 
-    [labelConfirm]="'close' | ddrTranslate"
-    type="info"
-    size="large" >
-
-    <span modal-content>
-        @if(pathRecomendationLetter()){
-             <iframe
-                [src]="pathRecomendationLetter() | ddrSafe:'resourceUrl'"
-                width="100%"
-                height="98%"
-                style="border: none;">
-            </iframe>
-        }
-    </span>
-</ddr-modal>

@@ -5,4 +5,5 @@ export interface EducationData {
     center: string
     city?: string
     country?: string
+    url?: string
 }

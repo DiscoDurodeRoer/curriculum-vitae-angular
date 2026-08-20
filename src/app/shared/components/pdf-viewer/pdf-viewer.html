@@ -1,0 +1,19 @@
+
+<ddr-modal 
+    [id]="ID_MODAL()" 
+    [labelConfirm]="'close' | ddrTranslate"
+    type="info"
+    size="large"
+    (close)="closeModal()" >
+
+    <span modal-content>
+        @if(pdf()){
+             <iframe
+                [src]="pdf() | ddrSafe:'resourceUrl'"
+                width="100%"
+                height="98%"
+                style="border: none;">
+            </iframe>
+        }
+    </span>
+</ddr-modal>

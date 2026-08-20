@@ -6,6 +6,8 @@ import { Projects } from '../../components/projects/projects';
 import { ActivatedRoute } from '@angular/router';
 import { DdrTranslateService } from 'ddr-ng/translate';
 import { Meta } from '@angular/platform-browser';
+import { Certificates } from '../../components/certificates/certificates';
+import { PdfViewer } from '../../../../shared/components/pdf-viewer/pdf-viewer';
 
 @Component({
   selector: 'app-curriculum-vitae',
@@ -14,6 +16,8 @@ import { Meta } from '@angular/platform-browser';
     Experience,
     Education,
     Projects,
+    Certificates,
+    PdfViewer
   ],
   templateUrl: './curriculum-vitae.html',
   styleUrl: './curriculum-vitae.scss',
