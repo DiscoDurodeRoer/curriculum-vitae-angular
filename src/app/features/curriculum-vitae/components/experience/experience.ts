@@ -57,6 +57,9 @@ export class Experience {
       technologies: [
         'Angular',
         'Typescript',
+        'Jest',
+        'Karma',
+        'Vitest',
         'HTML',
         'CSS',
         'SCSS',
@@ -114,6 +117,7 @@ export class Experience {
       technologies: [
         'Angular',
         'Typescript',
+        'Jest',
         'HTML',
         'CSS',
         'SCSS',
@@ -149,6 +153,7 @@ export class Experience {
       technologies: [
         'Angular',
         'Typescript',
+        'Karma',
         'HTML',
         'CSS',
         'SCSS',
@@ -185,6 +190,7 @@ export class Experience {
       technologies: [
         'Angular',
         'Typescript',
+        'Karma',
         'HTML',
         'CSS',
         'SCSS',
